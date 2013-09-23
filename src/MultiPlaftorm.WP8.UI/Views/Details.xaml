@@ -1,5 +1,6 @@
-﻿<phone:PhoneApplicationPage
+﻿<code:BasePage
     x:Class="MultiPlatform.WP8.UI.Views.Details"
+    xmlns:code="clr-namespace:MultiPlatform.WP8.UI.Code"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -34,4 +35,4 @@
         </Grid>
     </Grid>
 
-</phone:PhoneApplicationPage>
+    </code:BasePage>

@@ -20,7 +20,7 @@ namespace MultiPlatform.W8.UI.Views
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class Home : MultiPlatform.W8.UI.Common.LayoutAwarePage
+    public sealed partial class Home : Code.BasePage
     {
         public Home()
         {

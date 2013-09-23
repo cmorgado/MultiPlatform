@@ -10,7 +10,7 @@ using Microsoft.Phone.Shell;
 
 namespace MultiPlatform.WP8.UI.Views
 {
-    public partial class Details : PhoneApplicationPage
+    public partial class Details : Code.BasePage
     {
         public Details()
         {

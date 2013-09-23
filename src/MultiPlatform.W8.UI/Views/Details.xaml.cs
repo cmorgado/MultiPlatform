@@ -19,7 +19,7 @@ namespace MultiPlatform.W8.UI.Views
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class Details : MultiPlatform.W8.UI.Common.LayoutAwarePage
+    public sealed partial class Details : Code.BasePage
     {
         public Details()
         {
