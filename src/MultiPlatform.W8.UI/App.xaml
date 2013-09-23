@@ -2,8 +2,7 @@
     x:Class="MultiPlatform.W8.UI.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    
-
+    RequestedTheme="Light"
     xmlns:local="using:MultiPlatform.W8.UI">
 
     <Application.Resources>

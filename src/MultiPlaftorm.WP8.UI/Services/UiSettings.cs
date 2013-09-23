@@ -44,5 +44,10 @@ namespace MultiPlatform.WP8.UI.Services
             ApplicationManifestService manifest = new ApplicationManifestService();
             return manifest.GetApplicationManifest().App.Version;
         }
+
+        public bool IsConnectedToInternet()
+        {
+            return Microsoft.Phone.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
+        }
     }
 }

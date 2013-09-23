@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MultiPlatform.Domain.Code;
 using Windows.ApplicationModel;
+using Windows.Networking.Connectivity;
 
 namespace MultiPlatform.W8.UI.Services
 {
@@ -44,6 +45,30 @@ namespace MultiPlatform.W8.UI.Services
         {
             PackageVersion version = Package.Current.Id.Version;
             return string.Format("{0}.{1}", version.Major, version.Minor);
+        }
+
+        public bool IsConnectedToInternet()
+        {
+            NetworkInformation.NetworkStatusChanged += NetworkInformation_NetworkStatusChanged;
+
+            bool connected = false;
+
+            ConnectionProfile cp = NetworkInformation.GetInternetConnectionProfile();
+
+            if (cp != null)
+            {
+                NetworkConnectivityLevel cl = cp.GetNetworkConnectivityLevel();
+
+                connected = cl == NetworkConnectivityLevel.InternetAccess;
+            }
+
+            return connected;
+        }
+        void NetworkInformation_NetworkStatusChanged(object sender)
+        {
+
+
+
         }
     }
 }
