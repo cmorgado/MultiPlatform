@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+
 using MultiPlatform.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,23 +10,43 @@ namespace MultiPlatform.Domain.ViewModels
 {
     public class Home : BaseViewModel
     {
-
+      
         public readonly INavigation<MultiPlatform.Domain.Interfaces.NavigationModes> _navigationService;
         public readonly IStorage _storageService;
         public readonly IUx _uxService;
 
-        public Home(INavigation<MultiPlatform.Domain.Interfaces.NavigationModes> navigationService, IStorage storageService, IUx uxService)
+        public Home(INavigation<MultiPlatform.Domain.Interfaces.NavigationModes> navigationService, IStorage storageService
+            , IUx uxService
+            )
         {
             this.AppName = International.Translation.AppName;
             this.PageTitle = International.Translation.Home_Title;
             _navigationService = navigationService;
             _storageService = storageService;
             _uxService = uxService;
+        
+           
+
         }
 
 
 
+        private bool _Refesh;
+        public bool Refesh
+        {
+            get { return this.IsLogged; }
+            set
+            {
+                if (_Refesh != value)
+                {
+                    _Refesh = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+        
 
+        
         private RelayCommand _GoDetails;
         public RelayCommand GoDetails
         {
@@ -52,6 +73,32 @@ namespace MultiPlatform.Domain.ViewModels
 
         }
 
+
+        private RelayCommand _GoToLogin;
+        public RelayCommand GoToLogin
+        {
+            get
+            {
+                return _GoToLogin ?? (_GoToLogin = new RelayCommand(
+                  () =>
+                  {
+
+                      try
+                      {
+
+                          _uxService.GoToLogin();
+
+                      }
+                      catch (Exception ex)
+                      {
+
+                          throw ex;
+                      }
+
+                  }));
+            }
+
+        }
 
         private RelayCommand _ShowAlert;
         public RelayCommand ShowAlert

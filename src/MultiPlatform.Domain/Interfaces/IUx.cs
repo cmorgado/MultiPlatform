@@ -10,5 +10,7 @@ namespace MultiPlatform.Domain.Interfaces
     {
         void ShowMessageBox(string content);
         void ShowToast(string content);
+        void GoToLogin();
+        void DoLogin();
     }
 }

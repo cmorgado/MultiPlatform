@@ -79,11 +79,29 @@ namespace MultiPlatform.International {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to login.
+        /// </summary>
+        public static string Button_DoLogin {
+            get {
+                return ResourceManager.GetString("Button_DoLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to go to details.
         /// </summary>
         public static string Button_GoToDetails {
             get {
                 return ResourceManager.GetString("Button_GoToDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to go to login.
+        /// </summary>
+        public static string Button_GoToLogin {
+            get {
+                return ResourceManager.GetString("Button_GoToLogin", resourceCulture);
             }
         }
         
@@ -102,6 +120,15 @@ namespace MultiPlatform.International {
         public static string Home_Title {
             get {
                 return ResourceManager.GetString("Home_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string Login_Title {
+            get {
+                return ResourceManager.GetString("Login_Title", resourceCulture);
             }
         }
     }

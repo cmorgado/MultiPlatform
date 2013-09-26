@@ -123,13 +123,22 @@
   <data name="Button_Alert" xml:space="preserve">
     <value>show alert</value>
   </data>
+  <data name="Button_DoLogin" xml:space="preserve">
+    <value>login</value>
+  </data>
   <data name="Button_GoToDetails" xml:space="preserve">
     <value>go to details</value>
+  </data>
+  <data name="Button_GoToLogin" xml:space="preserve">
+    <value>go to login</value>
   </data>
   <data name="Details_Title" xml:space="preserve">
     <value>Details</value>
   </data>
   <data name="Home_Title" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="Login_Title" xml:space="preserve">
+    <value>Login</value>
   </data>
 </root>

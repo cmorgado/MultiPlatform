@@ -6,8 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
+
+
 #if NETFX_CORE
 using Windows.UI.Notifications;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Callisto.Controls;
+
+
 #endif
 
 namespace MultiPlatform.Shared.Services
@@ -25,7 +32,7 @@ namespace MultiPlatform.Shared.Services
         public async void ShowMessageBox(string content)
         {
             var m = new Windows.UI.Popups.MessageDialog(content);
-            await m.ShowAsync(); 
+            await m.ShowAsync();
         }
 #endif
 
@@ -47,7 +54,46 @@ namespace MultiPlatform.Shared.Services
             ToastNotification t = new ToastNotification(template);
 
             ToastNotificationManager.CreateToastNotifier().Show(t);
-        
+
+        }
+#endif
+
+#if WINDOWS_PHONE
+        public void GoToLogin()
+        {
+            MultiPlatform.WP8.UI.Services.UiNavigation nav = new WP8.UI.Services.UiNavigation();
+            nav.Navigate<Domain.ViewModels.Login>(false);
+        }
+#elif NETFX_CORE
+        public void GoToLogin()
+        {
+            Callisto.Controls.SettingsFlyout AboutFlyout = new Callisto.Controls.SettingsFlyout();
+
+
+            AboutFlyout.FlyoutWidth = Callisto.Controls.SettingsFlyout.SettingsFlyoutWidth.Wide;
+            AboutFlyout.HeaderText = International.Translation.Login_Title;
+            AboutFlyout.Content = new MultiPlatform.W8.UI.Views.UC.Login();
+            AboutFlyout.IsOpen = true;
+
+
+
+
+        }
+#endif
+
+#if WINDOWS_PHONE
+        public void DoLogin()
+        {
+            
+            MultiPlatform.WP8.UI.Services.UiNavigation nav = new WP8.UI.Services.UiNavigation();
+            nav.GoBack();
+        }
+#elif NETFX_CORE
+        public void DoLogin()
+        {
+            var f = Window.Current.Content as Frame;
+            f.Navigate(f.Content.GetType());
+            f.GoBack();
         }
 #endif
 

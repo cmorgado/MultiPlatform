@@ -36,11 +36,11 @@ namespace MultiPlatform.W8.UI.ViewModels
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.INavigation<MultiPlatform.Domain.Interfaces.NavigationModes>, UiNavigation>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IStorage, MultiPlatform.Shared.Services.UiStorage>();
            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IUx, MultiPlatform.Shared.Services.UiUx>();
-         
+      
             SimpleIoc.Default.Register<Domain.ViewModels.Home>();
             SimpleIoc.Default.Register<Domain.ViewModels.Details>();
-         
-         
+            SimpleIoc.Default.Register<Domain.ViewModels.Login>();
+           
         }
 
         public Domain.ViewModels.Home Home
@@ -56,6 +56,14 @@ namespace MultiPlatform.W8.UI.ViewModels
             get
             {
                 return ServiceLocator.Current.GetInstance<Domain.ViewModels.Details>();
+            }
+        }
+
+        public Domain.ViewModels.Login Login
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<Domain.ViewModels.Login>();
             }
         }
 

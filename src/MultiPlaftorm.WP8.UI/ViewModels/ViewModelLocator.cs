@@ -35,10 +35,10 @@ namespace MultiPlatform.WP8.UI.ViewModels
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.INavigation<MultiPlatform.Domain.Interfaces.NavigationModes>, UiNavigation>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IStorage, MultiPlatform.Shared.Services.UiStorage>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IUx, MultiPlatform.Shared.Services.UiUx>();
-
-         
+          
             SimpleIoc.Default.Register<Domain.ViewModels.Home>();
             SimpleIoc.Default.Register<Domain.ViewModels.Details>();
+            SimpleIoc.Default.Register<Domain.ViewModels.Login>();
          
          
         }
@@ -50,6 +50,7 @@ namespace MultiPlatform.WP8.UI.ViewModels
                 return ServiceLocator.Current.GetInstance<Domain.ViewModels.Home>();
             }
         }
+
         public Domain.ViewModels.Details Details
         {
             get
@@ -58,6 +59,13 @@ namespace MultiPlatform.WP8.UI.ViewModels
             }
         }
 
+        public Domain.ViewModels.Login Login
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<Domain.ViewModels.Login>();
+            }
+        }
 
         public static void Cleanup()
         {

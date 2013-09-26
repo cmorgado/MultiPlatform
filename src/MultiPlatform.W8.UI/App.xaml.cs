@@ -6,6 +6,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ApplicationSettings;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -42,7 +43,7 @@ namespace MultiPlatform.W8.UI
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-
+            SettingsPane.GetForCurrentView().CommandsRequested += App_CommandsRequested;
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (rootFrame == null)
@@ -85,6 +86,26 @@ namespace MultiPlatform.W8.UI
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        void App_CommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
+        {
+
+            Callisto.Controls.SettingsFlyout AboutFlyout = new Callisto.Controls.SettingsFlyout();
+            AboutFlyout.FlyoutWidth = Callisto.Controls.SettingsFlyout.SettingsFlyoutWidth.Wide;
+            AboutFlyout.HeaderText = International.Translation.Login_Title;
+            AboutFlyout.Content = new Views.UC.Login();
+             
+            SettingsCommand aboutsc = new SettingsCommand("LoginW", International.Translation.Login_Title, (x) =>
+            {
+
+                AboutFlyout.IsOpen = true;
+
+
+
+            });
+
+            args.Request.ApplicationCommands.Add(aboutsc);
         }
     }
 }

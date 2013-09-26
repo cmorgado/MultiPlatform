@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MultiPlatform.Domain.Code;
+using GalaSoft.MvvmLight;
+
 
 namespace MultiPlatform.Domain.ViewModels
 {
     public class BaseViewModel : Models.ModelBase
     {
+      
 
         public string navigationParameterJson;
         public T NavigationParameter<T>()
@@ -34,6 +37,21 @@ namespace MultiPlatform.Domain.ViewModels
         }
 
 
+
+
+        private bool _IsLogged = false;
+        public bool IsLogged
+        {
+            get { return this._IsLogged; }
+            set
+            {
+                if (_IsLogged != value)
+                {
+                    _IsLogged = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
 
 
         private string _PageTitle;

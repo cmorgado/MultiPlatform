@@ -49,7 +49,10 @@
                 Command="{Binding ShowAlert, Mode=OneWay}" 
                 HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
             </Button>
-            
+            <Button Content="{Binding Translation.Button_GoToLogin, Mode=OneWay, Source={StaticResource LabelsManager}}" 
+                Command="{Binding GoToLogin, Mode=OneWay}" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+            </Button>
         </StackPanel>
 
 
