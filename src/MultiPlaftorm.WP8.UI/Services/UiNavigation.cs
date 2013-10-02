@@ -22,6 +22,10 @@ namespace MultiPlatform.WP8.UI.Services
                                                                           {
                                                                               typeof(Domain.ViewModels.Login), "/Views/Login.xaml"
                                                                           }
+                                                                           ,
+                                                                          {
+                                                                              typeof(Domain.ViewModels.Map), "/Views/Map.xaml"
+                                                                          }
                                                                      };
 
 

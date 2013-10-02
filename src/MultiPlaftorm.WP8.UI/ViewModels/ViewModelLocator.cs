@@ -35,11 +35,12 @@ namespace MultiPlatform.WP8.UI.ViewModels
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.INavigation<MultiPlatform.Domain.Interfaces.NavigationModes>, UiNavigation>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IStorage, MultiPlatform.Shared.Services.UiStorage>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IUx, MultiPlatform.Shared.Services.UiUx>();
+            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ILocation, MultiPlatform.Shared.Services.LocationService>();
           
             SimpleIoc.Default.Register<Domain.ViewModels.Home>();
             SimpleIoc.Default.Register<Domain.ViewModels.Details>();
             SimpleIoc.Default.Register<Domain.ViewModels.Login>();
-         
+            SimpleIoc.Default.Register<Domain.ViewModels.Map>();
          
         }
 
@@ -64,6 +65,14 @@ namespace MultiPlatform.WP8.UI.ViewModels
             get
             {
                 return ServiceLocator.Current.GetInstance<Domain.ViewModels.Login>();
+            }
+        }
+
+        public Domain.ViewModels.Map Map
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<Domain.ViewModels.Map>();
             }
         }
 

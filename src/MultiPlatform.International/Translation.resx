@@ -132,6 +132,9 @@
   <data name="Button_GoToLogin" xml:space="preserve">
     <value>go to login</value>
   </data>
+  <data name="Button_GoToMap" xml:space="preserve">
+    <value>go to map</value>
+  </data>
   <data name="Details_Title" xml:space="preserve">
     <value>Details</value>
   </data>
@@ -140,5 +143,8 @@
   </data>
   <data name="Login_Title" xml:space="preserve">
     <value>Login</value>
+  </data>
+  <data name="Map_Title" xml:space="preserve">
+    <value>map</value>
   </data>
 </root>

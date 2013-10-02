@@ -19,6 +19,8 @@ namespace MultiPlatform.W8.UI.Services
                                                                          { typeof(MultiPlatform.Domain.ViewModels.Home),typeof(Home) }
                                                                          ,
                                                                             { typeof(MultiPlatform.Domain.ViewModels.Details),typeof(Details) }
+                                                                             ,
+                                                                            { typeof(MultiPlatform.Domain.ViewModels.Map),typeof(Map) }
                                                                   };
 
 

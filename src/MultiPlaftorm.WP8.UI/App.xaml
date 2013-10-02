@@ -5,12 +5,23 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:LabelsInternational="clr-namespace:MultiPlatform.International;assembly=MultiPlatform.International"
+    xmlns:c4fControlsConverters="clr-namespace:Coding4Fun.Toolkit.Controls.Converters;assembly=Coding4Fun.Toolkit.Controls"
+    xmlns:CimbalinoConverters="clr-namespace:Cimbalino.Phone.Toolkit.Converters;assembly=Cimbalino.Phone.Toolkit"
+  
+   
     >
 
     <!--Application Resources-->
     <Application.Resources>
-       
-      
+        <c4fControlsConverters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+        <c4fControlsConverters:VisibilityToBooleanConverter x:Key="VisibilityToBooleanConverter" />
+        <c4fControlsConverters:ThemedImageConverter x:Key="ThemedImageConverter" />
+        <CimbalinoConverters:NegativeBooleanConverter x:Key="NegativeBooleanConverter"/>
+
+        <c4fControlsConverters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+        <code:GeoCoordinateConverter x:Key="GeoCoordinateConverter"  xmlns:code="clr-namespace:MultiPlatform.WP8.UI.Code;assembly=MultiPlatform.WP8.UI"/>
+        
         <vm:ViewModelLocator xmlns:vm="clr-namespace:MultiPlatform.WP8.UI.ViewModels"
                            x:Key="Locator" />  
         <LabelsInternational:PublicInternational x:Key="LabelsManager"/>

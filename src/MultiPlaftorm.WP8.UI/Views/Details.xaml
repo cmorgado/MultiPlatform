@@ -33,6 +33,11 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
 
         </Grid>
+        <ProgressBar VerticalAlignment="Top"
+			IsIndeterminate="True" 
+			Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" 
+			x:Name="_performanceProgressBar" Height="10" />
+
     </Grid>
 
     </code:BasePage>

@@ -106,6 +106,15 @@ namespace MultiPlatform.International {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to go to map.
+        /// </summary>
+        public static string Button_GoToMap {
+            get {
+                return ResourceManager.GetString("Button_GoToMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string Details_Title {
@@ -129,6 +138,15 @@ namespace MultiPlatform.International {
         public static string Login_Title {
             get {
                 return ResourceManager.GetString("Login_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to map.
+        /// </summary>
+        public static string Map_Title {
+            get {
+                return ResourceManager.GetString("Map_Title", resourceCulture);
             }
         }
     }

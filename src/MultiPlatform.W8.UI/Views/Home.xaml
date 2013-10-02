@@ -8,8 +8,6 @@
     xmlns:common="using:MultiPlatform.W8.UI.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:WinRtBehaviors="using:WinRtBehaviors"
-    xmlns:Win8nl_Behavior="using:Win8nl.Behaviors"
     DataContext="{Binding Source={StaticResource Locator}, Path=Home}"
     xmlns:metroEventToCommand="using:MetroEventToCommand"
     mc:Ignorable="d">
@@ -53,8 +51,17 @@
                 Command="{Binding GoToLogin, Mode=OneWay}" 
                 HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
             </Button>
+            <Button Content="{Binding Translation.Button_GoToMap, Mode=OneWay, Source={StaticResource LabelsManager}}" 
+                Command="{Binding GoToMap, Mode=OneWay}" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+            </Button>
         </StackPanel>
 
+        <ProgressBar Grid.Row="0" Height="10" 
+                     Margin="0,0,0,0" VerticalAlignment="Top"
+                     Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                     IsIndeterminate="True" 
+                   />
 
 
 

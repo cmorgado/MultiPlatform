@@ -65,8 +65,23 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
+                <Button Content="{Binding Translation.Button_GoToMap, Mode=OneWay, Source={StaticResource LabelsManager}}" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <cmd:EventToCommand Command="{Binding GoToMap, Mode=OneWay}"/>
+
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
             </StackPanel>
         </Grid>
+        <ProgressBar VerticalAlignment="Top"
+			IsIndeterminate="True" 
+			Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" 
+			x:Name="_performanceProgressBar" Height="10" />
+
     </Grid>
 
 </code:BasePage>

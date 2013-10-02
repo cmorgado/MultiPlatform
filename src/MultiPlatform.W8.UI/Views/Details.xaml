@@ -37,6 +37,12 @@
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{Binding AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
         <TextBlock  Grid.Row="1" Text="{Binding PageTitle}" Style="{StaticResource PageHeaderTextStyle}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <ProgressBar Grid.Row="0" Height="10" 
+                     Margin="0,0,0,0" VerticalAlignment="Top"
+                     Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                     IsIndeterminate="True" 
+                   />
         <VisualStateManager.VisualStateGroups>
 
             <!-- Visual states reflect the application's view state -->

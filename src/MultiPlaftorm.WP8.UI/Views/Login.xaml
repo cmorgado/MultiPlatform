@@ -44,6 +44,12 @@
                 </Button>
             </StackPanel>
         </Grid>
+        <ProgressBar VerticalAlignment="Top"
+			IsIndeterminate="True" 
+			Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" 
+			x:Name="_performanceProgressBar" Height="10" />
+
+
     </Grid>
 
 </code:BasePage>

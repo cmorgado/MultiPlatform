@@ -37,7 +37,45 @@ namespace MultiPlatform.Domain.ViewModels
         }
 
 
+        private int loadingCounter = 0;
+        public int LoadingCounter
+        {
+            get { return loadingCounter; }
+            set
+            {
+                loadingCounter = value;
+                if (value != loadingCounter)
+                {
+                    loadingCounter = value;
+                    // NotifyPropertyChanged();
+                }
+                if (loadingCounter < 0)
+                    loadingCounter = 0;
 
+                if (loadingCounter > 0)
+                {
+                    IsLoading = true;
+                }
+                else
+                {
+                    IsLoading = false;
+                }
+            }
+        }
+
+        private bool isLoading = false;
+        public bool IsLoading
+        {
+            get { return isLoading; }
+            set
+            {
+                if (value != isLoading)
+                {
+                    isLoading = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
 
         private bool _IsLogged = false;
         public bool IsLogged

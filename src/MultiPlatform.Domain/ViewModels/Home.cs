@@ -44,7 +44,32 @@ namespace MultiPlatform.Domain.ViewModels
                 }
             }
         }
-        
+
+        private RelayCommand _GoToMap;
+        public RelayCommand GoToMap
+        {
+            get
+            {
+                return _GoToMap ?? (_GoToMap = new RelayCommand(
+                  () =>
+                  {
+
+                      try
+                      {
+
+                          _navigationService.Navigate<Map>(false);
+
+                      }
+                      catch (Exception ex)
+                      {
+
+                          throw ex;
+                      }
+
+                  }));
+            }
+
+        }
 
         
         private RelayCommand _GoDetails;

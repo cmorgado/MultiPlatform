@@ -42,7 +42,7 @@ namespace MultiPlatform.Shared.Services
         {
             ToastPrompt toast = new ToastPrompt();
             toast.Title = "";
-            toast.Message = "content";
+            toast.Message = content;
             toast.Show();
         }
 #elif NETFX_CORE
