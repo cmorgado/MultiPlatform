@@ -1,24 +1,24 @@
 # MultiPlatform
 =============
 
-base solution for building Windows Store and Windows Phone 8 app
+Base solution for building Windows Store and Windows Phone 8 app
 
 ## BEST PRATICES 
 
-* __ Build with MVVM & PCL
-* __ Get all your business rules one one place only
-* __ Easily build WP8 and Win8 apps
-* __ Internationalization easy
+* Build with MVVM & PCL
+* Get all your business rules one one place only
+* Easily build WP8 and Win8 apps
+* Internationalization easy
 
 
 ##Features available
 
-* __ Navigation between pages
-* __ Isolated Storage 
-* __ Example of specific UI features
-* __ Example of difference between WP8 and W8 using SettingsPane for the Login feature
-* __ Location enable apps 
-* __ App settings
+* Navigation between pages
+* Isolated Storage 
+* Example of specific UI features
+* Example of difference between WP8 and W8 using SettingsPane for the Login feature
+* Location enable apps 
+* App settings
 
 Much more to come.... 
 
