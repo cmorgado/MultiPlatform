@@ -25,7 +25,10 @@ namespace MultiPlatform.Shared.Services
 #if WINDOWS_PHONE
         public void ShowMessageBox(string content)
         {
-            MessageBox.Show(content);
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+               {
+                   MessageBox.Show(content);
+               });
 
         }
 #elif NETFX_CORE
@@ -40,10 +43,13 @@ namespace MultiPlatform.Shared.Services
 #if WINDOWS_PHONE
         public void ShowToast(string content)
         {
-            ToastPrompt toast = new ToastPrompt();
-            toast.Title = "";
-            toast.Message = content;
-            toast.Show();
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+               {
+                   ToastPrompt toast = new ToastPrompt();
+                   toast.Title = "";
+                   toast.Message = content;
+                   toast.Show();
+               });
         }
 #elif NETFX_CORE
         public async void ShowToast(string content)
@@ -84,7 +90,7 @@ namespace MultiPlatform.Shared.Services
 #if WINDOWS_PHONE
         public void DoLogin()
         {
-            
+
             MultiPlatform.WP8.UI.Services.UiNavigation nav = new WP8.UI.Services.UiNavigation();
             nav.GoBack();
         }

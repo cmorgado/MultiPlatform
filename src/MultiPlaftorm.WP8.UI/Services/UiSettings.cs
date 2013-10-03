@@ -4,8 +4,8 @@ using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MultiPlatform.Domain.Code;
 using Cimbalino.Phone.Toolkit.Services;
+using MultiPlatform.Domain.Code;
 
 namespace MultiPlatform.WP8.UI.Services
 {
@@ -15,7 +15,7 @@ namespace MultiPlatform.WP8.UI.Services
         {
             string val = string.Empty;
             var settings = IsolatedStorageSettings.ApplicationSettings;
-            var pushsett = settings.Any(o => o.Key == Domain.Code.Constants.SETTINGS_KEY_PREFIX + Key);
+            var pushsett = settings.Any(o => o.Key == Constants.SETTINGS_KEY_PREFIX + Key);
 
             if (!pushsett)
             {
@@ -24,7 +24,7 @@ namespace MultiPlatform.WP8.UI.Services
             }
             else
             {
-                string v = settings[Domain.Code.Constants.SETTINGS_KEY_PREFIX + Key].ToString();
+                string v = settings[Constants.SETTINGS_KEY_PREFIX + Key].ToString();
                 return v.FromJson<T>();
             }
         }
@@ -32,11 +32,11 @@ namespace MultiPlatform.WP8.UI.Services
         public void SaveAppSettingValue(string Key, object value)
         {
             var settings = IsolatedStorageSettings.ApplicationSettings;
-            if (!settings.Any(o => o.Key == Domain.Code.Constants.SETTINGS_KEY_PREFIX + Key))
+            if (!settings.Any(o => o.Key == Constants.SETTINGS_KEY_PREFIX + Key))
 
-                settings.Add(Domain.Code.Constants.SETTINGS_KEY_PREFIX + Key, value.ToJson());
+                settings.Add(Constants.SETTINGS_KEY_PREFIX + Key, value.ToJson());
             else
-                settings[Domain.Code.Constants.SETTINGS_KEY_PREFIX + Key] = value.ToJson();
+                settings[Constants.SETTINGS_KEY_PREFIX + Key] = value.ToJson();
         }
 
         public string AppVersion()

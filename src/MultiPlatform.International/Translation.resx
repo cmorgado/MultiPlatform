@@ -135,6 +135,15 @@
   <data name="Button_GoToMap" xml:space="preserve">
     <value>go to map</value>
   </data>
+  <data name="Button_GoToNFC" xml:space="preserve">
+    <value>go to NFC sending</value>
+  </data>
+  <data name="Button_StartPeer" xml:space="preserve">
+    <value>start peer</value>
+  </data>
+  <data name="Button_StartSending" xml:space="preserve">
+    <value>start sending </value>
+  </data>
   <data name="Details_Title" xml:space="preserve">
     <value>Details</value>
   </data>
@@ -146,5 +155,8 @@
   </data>
   <data name="Map_Title" xml:space="preserve">
     <value>map</value>
+  </data>
+  <data name="NFCSend_Title" xml:space="preserve">
+    <value>NFC send demo</value>
   </data>
 </root>

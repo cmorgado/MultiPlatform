@@ -21,6 +21,9 @@ namespace MultiPlatform.W8.UI.Services
                                                                             { typeof(MultiPlatform.Domain.ViewModels.Details),typeof(Details) }
                                                                              ,
                                                                             { typeof(MultiPlatform.Domain.ViewModels.Map),typeof(Map) }
+                                                                             ,
+                                                                            { typeof(MultiPlatform.Domain.ViewModels.NFCSend),typeof(Views.Demo.NFCSend) }
+
                                                                   };
 
 

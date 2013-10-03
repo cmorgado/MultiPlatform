@@ -1,5 +1,6 @@
 ﻿using MultiPlatform.Domain.Interfaces;
-using MultiPlatform.Domain.Models.Ui;
+
+using MultiPlatform.Domain.Models.Ui.Map;
 using System;
 using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
@@ -27,34 +28,34 @@ namespace MultiPlatform.Shared.Services
             }
         }
 
-        public static Domain.Models.Ui.GeoPosition FromGeoposition(this Windows.Devices.Geolocation.Geoposition x)
+        public static Domain.Models.Ui.Map.GeoPosition FromGeoposition(this Windows.Devices.Geolocation.Geoposition x)
         {
             if (x == null)
             {
-                return default(Domain.Models.Ui.GeoPosition);
+                return default(Domain.Models.Ui.Map.GeoPosition);
             }
 
             var address = x.CivicAddress;
-            Domain.Models.Ui.CivicAdress modelAdress = new CivicAdress();
+            Domain.Models.Ui.Map.CivicAdress modelAdress = new CivicAdress();
             if (address != null)
             {
-                modelAdress = new Domain.Models.Ui.CivicAdress
-                 {
-                     City = address.City,
-                     Country = address.Country,
-                     State = address.State
-                     ,
-                     PostalCode = address.PostalCode
-                     ,
-                     TimeStamp = address.Timestamp
-                 };
+                modelAdress = new Domain.Models.Ui.Map.CivicAdress
+                {
+                    City = address.City,
+                    Country = address.Country,
+                    State = address.State
+                    ,
+                    PostalCode = address.PostalCode
+                    ,
+                    TimeStamp = address.Timestamp
+                };
             }
 
-            return new Domain.Models.Ui.GeoPosition
+            return new Domain.Models.Ui.Map.GeoPosition
             {
                 CivicAdress = modelAdress
                     ,
-                Coordinate = new Domain.Models.Ui.Coordinate
+                Coordinate = new Domain.Models.Ui.Map.Coordinate
                 {
                     Accuracy = x.Coordinate.Accuracy
                      ,
@@ -76,9 +77,9 @@ namespace MultiPlatform.Shared.Services
         }
 
 
-        public static Domain.Models.Ui.Coordinate ToCoordinate(this Windows.Devices.Geolocation.Geocoordinate coordinate)
+        public static Domain.Models.Ui.Map.Coordinate ToCoordinate(this Windows.Devices.Geolocation.Geocoordinate coordinate)
         {
-            return new Domain.Models.Ui.Coordinate
+            return new Domain.Models.Ui.Map.Coordinate
             {
                 TimeStamp = coordinate.Timestamp,
                 Latitude = coordinate.Latitude,
@@ -195,7 +196,7 @@ namespace MultiPlatform.Shared.Services
             _geolocator.StatusChanged -= _geolocator_StatusChanged;
         }
 
-        public async Task<Domain.Models.Ui.GeoPosition> GetPosition(LocationAccuracy desiredAccuracy)
+        public async Task<Domain.Models.Ui.Map.GeoPosition> GetPosition(LocationAccuracy desiredAccuracy)
         {
             try
             {
@@ -209,7 +210,7 @@ namespace MultiPlatform.Shared.Services
             }
         }
 
-        public async Task<Domain.Models.Ui.GeoPosition> GetPositionAsync(LocationAccuracy desiredAccuracy, TimeSpan maximumAge, TimeSpan timeout)
+        public async Task<Domain.Models.Ui.Map.GeoPosition> GetPositionAsync(LocationAccuracy desiredAccuracy, TimeSpan maximumAge, TimeSpan timeout)
         {
             try
             {

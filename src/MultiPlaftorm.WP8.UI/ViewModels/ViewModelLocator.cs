@@ -36,11 +36,14 @@ namespace MultiPlatform.WP8.UI.ViewModels
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IStorage, MultiPlatform.Shared.Services.UiStorage>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IUx, MultiPlatform.Shared.Services.UiUx>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ILocation, MultiPlatform.Shared.Services.LocationService>();
+            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ISettings, MultiPlatform.WP8.UI.Services.UiSettings>();
+            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IPeerConnector, MultiPlatform.Shared.Services.SimplePeerConnector>();
           
             SimpleIoc.Default.Register<Domain.ViewModels.Home>();
             SimpleIoc.Default.Register<Domain.ViewModels.Details>();
             SimpleIoc.Default.Register<Domain.ViewModels.Login>();
             SimpleIoc.Default.Register<Domain.ViewModels.Map>();
+            SimpleIoc.Default.Register<Domain.ViewModels.NFCSend>();
          
         }
 
@@ -75,6 +78,15 @@ namespace MultiPlatform.WP8.UI.ViewModels
                 return ServiceLocator.Current.GetInstance<Domain.ViewModels.Map>();
             }
         }
+
+        public Domain.ViewModels.NFCSend NFCSend
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<Domain.ViewModels.NFCSend>();
+            }
+        }
+
 
         public static void Cleanup()
         {

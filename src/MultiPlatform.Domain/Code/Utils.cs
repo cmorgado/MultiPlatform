@@ -12,7 +12,21 @@ namespace MultiPlatform.Domain.Code
 {
     public static class Utils
     {
-      
+
+        public static byte[] GetBytes(string str)
+        {
+            byte[] bytes = new byte[str.Length * sizeof(char)];
+            System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
+            return bytes;
+        }
+
+        public static string GetString(byte[] bytes)
+        {
+            char[] chars = new char[bytes.Length / sizeof(char)];
+            System.Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
+            return new string(chars);
+        }
+
         public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
         {
             // Unix timestamp is seconds past epoch
@@ -20,7 +34,7 @@ namespace MultiPlatform.Domain.Code
             dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
             return dtDateTime;
         }
-      
+
 
         public static String convertToString(this Enum eff)
         {
@@ -50,7 +64,7 @@ namespace MultiPlatform.Domain.Code
         {
             try
             {
-            
+
 
                 return JsonConvert.DeserializeObject<TJson>(jsonString);
             }

@@ -75,6 +75,16 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
+                <Button Content="{Binding Translation.Button_GoToNFC, Mode=OneWay, Source={StaticResource LabelsManager}}" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <cmd:EventToCommand Command="{Binding GoToNFCSend, Mode=OneWay}"/>
+
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
             </StackPanel>
         </Grid>
         <ProgressBar VerticalAlignment="Top"

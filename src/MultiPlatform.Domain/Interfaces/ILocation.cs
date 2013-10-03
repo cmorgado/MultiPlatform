@@ -9,13 +9,13 @@ namespace MultiPlatform.Domain.Interfaces
 
     public interface ILocation
     {
-        Task<MultiPlatform.Domain.Models.Ui.GeoPosition> GetPosition(MultiPlatform.Domain.Interfaces.LocationAccuracy desiredAccuracy);
-        Task<MultiPlatform.Domain.Models.Ui.GeoPosition> GetPositionAsync(MultiPlatform.Domain.Interfaces.LocationAccuracy desiredAccuracy, TimeSpan maximumAge, TimeSpan timeout);
-        event EventHandler<MultiPlatform.Domain.Models.Ui.GeoPositionChangedEventArgs> PositionChanged;
+        Task<MultiPlatform.Domain.Models.Ui.Map.GeoPosition> GetPosition(MultiPlatform.Domain.Interfaces.LocationAccuracy desiredAccuracy);
+        Task<MultiPlatform.Domain.Models.Ui.Map.GeoPosition> GetPositionAsync(MultiPlatform.Domain.Interfaces.LocationAccuracy desiredAccuracy, TimeSpan maximumAge, TimeSpan timeout);
+        event EventHandler<MultiPlatform.Domain.Models.Ui.Map.GeoPositionChangedEventArgs> PositionChanged;
         void Start();
         void Start(MultiPlatform.Domain.Interfaces.LocationAccuracy desiredAccuracy);
         void Start(int desiredAccuracyInMeters);
-        event EventHandler<MultiPlatform.Domain.Models.Ui.LocationStatusChangedEventArgs> StatusChanged;
+        event EventHandler<MultiPlatform.Domain.Models.Ui.Map.LocationStatusChangedEventArgs> StatusChanged;
         void Stop();
     }
 

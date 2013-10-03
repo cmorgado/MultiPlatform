@@ -103,6 +103,9 @@
     <Compile Include="..\MultiPlaftorm.WP8.UI\Services\LocationService.cs">
       <Link>Services\LocationService.cs</Link>
     </Compile>
+    <Compile Include="..\MultiPlaftorm.WP8.UI\Services\SimplePeerConnector.cs">
+      <Link>Services\SimplePeerConnector.cs</Link>
+    </Compile>
     <Compile Include="..\MultiPlaftorm.WP8.UI\Services\UiStorage.cs">
       <Link>Services\UiStorage.cs</Link>
     </Compile>
@@ -126,6 +129,9 @@
     <Compile Include="Services\UiNavigation.cs" />
     <Compile Include="Services\UiSettings.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="Views\Demo\NFCSend.xaml.cs">
+      <DependentUpon>NFCSend.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Details.xaml.cs">
       <DependentUpon>Details.xaml</DependentUpon>
     </Compile>
@@ -166,6 +172,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Demo\NFCSend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Details.xaml">
       <SubType>Designer</SubType>
@@ -226,9 +236,7 @@
       <HintPath>..\packages\MvvmLightLibs.4.1.27.1\lib\netcore45\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Demo\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
   </PropertyGroup>

@@ -4,30 +4,58 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections.ObjectModel;
+using MultiPlatform.Domain.Code;
 
 namespace MultiPlatform.Domain.ViewModels
 {
     public class Map : BaseViewModel
     {
-        public readonly INavigation<MultiPlatform.Domain.Interfaces.NavigationModes> _navigationService;
-        public readonly IUx _uxService;
-        public readonly ILocation _locationService;
 
-        public Map(INavigation<MultiPlatform.Domain.Interfaces.NavigationModes> navigationService, ILocation locationService, IUx uxService)
+
+
+        public Map(
+            INavigation<Domain.Interfaces.NavigationModes> navigationService
+            , IStorage storageService
+            , ISettings settingsService
+            , IUx uxService
+            , ILocation locationService
+            , IPeerConnector peerConnectorService
+            )
+            : base(
+            navigationService
+            , storageService
+            , settingsService
+            , uxService
+            , locationService
+                , peerConnectorService
+            )
         {
+
             this.AppName = International.Translation.AppName;
             this.PageTitle = International.Translation.Map_Title;
-            _navigationService = navigationService;
-            _locationService = locationService;
-            _uxService = uxService;
-
-
 
         }
 
 
-        private Models.Ui.GeoPosition _CurrentPosition = new Models.Ui.GeoPosition();
-        public Models.Ui.GeoPosition CurrentPosition
+
+        private ObservableCollection<Models.Ui.Map.PushpinModel> _Items= new ObservableCollection<Models.Ui.Map.PushpinModel>();
+        public ObservableCollection<Models.Ui.Map.PushpinModel> Items
+        {
+            get { return this._Items; }
+            set
+            {
+                if (_Items != value)
+                {
+                    _Items = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+        
+
+        private Models.Ui.Map.GeoPosition _CurrentPosition = new Models.Ui.Map.GeoPosition();
+        public Models.Ui.Map.GeoPosition CurrentPosition
         {
             get { return this._CurrentPosition; }
             set
@@ -70,9 +98,9 @@ namespace MultiPlatform.Domain.ViewModels
                          ZoomLevel = 1;
                          var result = await _locationService.GetPosition(LocationAccuracy.Default);  
                          ZoomLevel = 13;
-                         CurrentPosition = new Models.Ui.GeoPosition
+                         CurrentPosition = new Models.Ui.Map.GeoPosition
                          {
-                             Coordinate = new Models.Ui.Coordinate
+                             Coordinate = new Models.Ui.Map.Coordinate
                              {
                                  Longitude = result.Coordinate.Longitude,
                                  Latitude = result.Coordinate.Latitude

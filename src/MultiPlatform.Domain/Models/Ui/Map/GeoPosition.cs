@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace MultiPlatform.Domain.Models.Ui
+namespace MultiPlatform.Domain.Models.Ui.Map
 {
 
     public class GeoPositionChangedEventArgs : EventArgs

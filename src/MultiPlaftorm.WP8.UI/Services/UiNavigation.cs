@@ -25,6 +25,9 @@ namespace MultiPlatform.WP8.UI.Services
                                                                            ,
                                                                           {
                                                                               typeof(Domain.ViewModels.Map), "/Views/Map.xaml"
+                                                                          },
+                                                                           {
+                                                                              typeof(Domain.ViewModels.NFCSend), "/Views/Demo/NFCSend.xaml"
                                                                           }
                                                                      };
 

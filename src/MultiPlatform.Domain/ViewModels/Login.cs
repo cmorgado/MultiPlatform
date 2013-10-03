@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using MultiPlatform.Domain.Code;
 using MultiPlatform.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,20 +11,30 @@ namespace MultiPlatform.Domain.ViewModels
   public  class Login :BaseViewModel
     {
 
-        public readonly INavigation<MultiPlatform.Domain.Interfaces.NavigationModes> _navigationService;
-        public readonly IStorage _storageService;
-        public readonly IUx _uxService;
 
-        public Login(INavigation<MultiPlatform.Domain.Interfaces.NavigationModes> navigationService, IStorage storageService, IUx uxService)
+
+      public Login(
+          INavigation<Domain.Interfaces.NavigationModes> navigationService
+          , IStorage storageService
+          , ISettings settingsService
+          , IUx uxService
+          , ILocation locationService
+          , IPeerConnector peerConnectorService
+          )
+          : base(
+          navigationService
+          , storageService
+          , settingsService
+          , uxService
+          , locationService
+          , peerConnectorService
+          )
         {
+
             this.AppName = International.Translation.AppName;
             this.PageTitle = International.Translation.Login_Title;
-            _navigationService = navigationService;
-            _storageService = storageService;
-            _uxService = uxService;
+
         }
-
-
 
         private string _Email;
         public string Email

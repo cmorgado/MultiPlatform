@@ -15,7 +15,7 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
-using MultiPlatform.W8.UI.Services;
+
 
 
 namespace MultiPlatform.W8.UI.ViewModels
@@ -33,15 +33,19 @@ namespace MultiPlatform.W8.UI.ViewModels
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.INavigation<MultiPlatform.Domain.Interfaces.NavigationModes>, UiNavigation>();
+            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.INavigation<MultiPlatform.Domain.Interfaces.NavigationModes>, MultiPlatform.W8.UI.Services.UiNavigation>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IStorage, MultiPlatform.Shared.Services.UiStorage>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IUx, MultiPlatform.Shared.Services.UiUx>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ILocation, MultiPlatform.Shared.Services.LocationService>();
+            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ISettings, MultiPlatform.W8.UI.Services.UiSettings>();
+            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IPeerConnector, MultiPlatform.Shared.Services.SimplePeerConnector>();
+          
 
             SimpleIoc.Default.Register<Domain.ViewModels.Home>();
             SimpleIoc.Default.Register<Domain.ViewModels.Details>();
             SimpleIoc.Default.Register<Domain.ViewModels.Login>();
             SimpleIoc.Default.Register<Domain.ViewModels.Map>();
+            SimpleIoc.Default.Register<Domain.ViewModels.NFCSend>();
 
         }
 
@@ -75,6 +79,14 @@ namespace MultiPlatform.W8.UI.ViewModels
             get
             {
                 return ServiceLocator.Current.GetInstance<Domain.ViewModels.Map>();
+            }
+        }
+
+        public Domain.ViewModels.NFCSend NFC
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<Domain.ViewModels.NFCSend>();
             }
         }
 

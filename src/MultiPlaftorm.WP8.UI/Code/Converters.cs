@@ -20,7 +20,7 @@ namespace MultiPlatform.WP8.UI.Code
             if (value != null)
             {
 
-                var loc = value as Domain.Models.Ui.GeoPosition;
+                var loc = value as Domain.Models.Ui.Map.GeoPosition;
                 if (loc.Coordinate != null)
                 {
                     GeoCoordinate g = new GeoCoordinate();

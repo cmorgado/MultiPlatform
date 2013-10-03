@@ -115,6 +115,33 @@ namespace MultiPlatform.International {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to go to NFC sending.
+        /// </summary>
+        public static string Button_GoToNFC {
+            get {
+                return ResourceManager.GetString("Button_GoToNFC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to start peer.
+        /// </summary>
+        public static string Button_StartPeer {
+            get {
+                return ResourceManager.GetString("Button_StartPeer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to start sending .
+        /// </summary>
+        public static string Button_StartSending {
+            get {
+                return ResourceManager.GetString("Button_StartSending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string Details_Title {
@@ -147,6 +174,15 @@ namespace MultiPlatform.International {
         public static string Map_Title {
             get {
                 return ResourceManager.GetString("Map_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NFC send demo.
+        /// </summary>
+        public static string NFCSend_Title {
+            get {
+                return ResourceManager.GetString("NFCSend_Title", resourceCulture);
             }
         }
     }

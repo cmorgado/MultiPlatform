@@ -1,5 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
-
+using MultiPlatform.Domain.Code;
 using MultiPlatform.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,25 +10,30 @@ namespace MultiPlatform.Domain.ViewModels
 {
     public class Home : BaseViewModel
     {
-      
-        public readonly INavigation<MultiPlatform.Domain.Interfaces.NavigationModes> _navigationService;
-        public readonly IStorage _storageService;
-        public readonly IUx _uxService;
 
-        public Home(INavigation<MultiPlatform.Domain.Interfaces.NavigationModes> navigationService, IStorage storageService
+
+        public Home(
+            INavigation<Domain.Interfaces.NavigationModes> navigationService
+            , IStorage storageService
+            , ISettings settingsService
             , IUx uxService
+            , ILocation locationService
+            , IPeerConnector peerConnectorService
+            )
+            : base(
+            navigationService
+            , storageService
+            , settingsService
+            , uxService
+            , locationService
+                , peerConnectorService
             )
         {
+
             this.AppName = International.Translation.AppName;
             this.PageTitle = International.Translation.Home_Title;
-            _navigationService = navigationService;
-            _storageService = storageService;
-            _uxService = uxService;
-        
-           
 
         }
-
 
 
         private bool _Refesh;
@@ -71,7 +76,7 @@ namespace MultiPlatform.Domain.ViewModels
 
         }
 
-        
+
         private RelayCommand _GoDetails;
         public RelayCommand GoDetails
         {
@@ -98,6 +103,31 @@ namespace MultiPlatform.Domain.ViewModels
 
         }
 
+        private RelayCommand _GoNFCSend;
+        public RelayCommand GoToNFCSend
+        {
+            get
+            {
+                return _GoNFCSend ?? (_GoNFCSend = new RelayCommand(
+                  () =>
+                  {
+
+                      try
+                      {
+
+                          _navigationService.Navigate<NFCSend>(false);
+
+                      }
+                      catch (Exception ex)
+                      {
+
+                          throw ex;
+                      }
+
+                  }));
+            }
+
+        }
 
         private RelayCommand _GoToLogin;
         public RelayCommand GoToLogin
