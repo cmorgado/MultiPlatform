@@ -15,7 +15,7 @@ namespace MultiPlatform.WP8.UI.Services
         {
             string val = string.Empty;
             var settings = IsolatedStorageSettings.ApplicationSettings;
-            var pushsett = settings.Any(o => o.Key == "SETTINGS_" + Key);
+            var pushsett = settings.Any(o => o.Key == Domain.Code.Constants.SETTINGS_KEY_PREFIX + Key);
 
             if (!pushsett)
             {
@@ -24,7 +24,7 @@ namespace MultiPlatform.WP8.UI.Services
             }
             else
             {
-                string v = settings["SETTINGS_" + Key].ToString();
+                string v = settings[Domain.Code.Constants.SETTINGS_KEY_PREFIX + Key].ToString();
                 return v.FromJson<T>();
             }
         }
@@ -32,11 +32,11 @@ namespace MultiPlatform.WP8.UI.Services
         public void SaveAppSettingValue(string Key, object value)
         {
             var settings = IsolatedStorageSettings.ApplicationSettings;
-            if (!settings.Any(o => o.Key == "SETTINGS_" + Key))
+            if (!settings.Any(o => o.Key == Domain.Code.Constants.SETTINGS_KEY_PREFIX + Key))
 
-                settings.Add("SETTINGS_" + Key, value.ToJson());
+                settings.Add(Domain.Code.Constants.SETTINGS_KEY_PREFIX + Key, value.ToJson());
             else
-                settings["SETTINGS_" + Key] = value.ToJson();
+                settings[Domain.Code.Constants.SETTINGS_KEY_PREFIX + Key] = value.ToJson();
         }
 
         public string AppVersion()
