@@ -107,7 +107,6 @@
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\LocationService.cs" />
-    <Compile Include="Services\_PeerConnectorService.cs" />
     <Compile Include="Services\SimplePeerConnector.cs" />
     <Compile Include="Services\UiNavigation.cs" />
     <Compile Include="Services\UiSettings.cs" />
