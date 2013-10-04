@@ -57,7 +57,7 @@ namespace MultiPlatform.Shared.Services
             PeerFinder.AllowBluetooth = true;
 
 #if NETFX_CORE
-                PeerFinder.AllowWiFiDirect = true;
+             //   PeerFinder.AllowWiFiDirect = true;
 #else
             PeerFinder.AllowWiFiDirect = false;
 #endif

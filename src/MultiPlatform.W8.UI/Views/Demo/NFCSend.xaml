@@ -1,7 +1,8 @@
 ﻿<common:LayoutAwarePage
     x:Name="pageRoot"
     x:Class="MultiPlatform.W8.UI.Views.Demo.NFCSend"
-    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    DataContext="{Binding Source={StaticResource Locator}, Path=NFCSend}"
+    xmlns:metroEventToCommand="using:MetroEventToCommand"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MultiPlatform.W8.UI.Views.Demo"
@@ -12,8 +13,6 @@
 
     <Page.Resources>
 
-        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">My Application</x:String>
     </Page.Resources>
 
     <!--
@@ -34,9 +33,22 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{Binding AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
+        <StackPanel Grid.Row="1" >
 
+            <Button Content="{Binding Translation.Button_StartPeer, Mode=OneWay, Source={StaticResource LabelsManager}}" 
+                    HorizontalAlignment="Center" Command="{Binding StartPeering, Mode=OneWay}"
+                    VerticalAlignment="Center">
+
+            </Button>
+            <Button Content="{Binding Translation.Button_StartSending, Mode=OneWay, Source={StaticResource LabelsManager}}" 
+                    HorizontalAlignment="Center"  Command="{Binding DoSend, Mode=OneWay}"
+                    VerticalAlignment="Center">
+
+            </Button>
+
+        </StackPanel>
         <VisualStateManager.VisualStateGroups>
 
             <!-- Visual states reflect the application's view state -->

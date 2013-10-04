@@ -82,7 +82,7 @@ namespace MultiPlatform.W8.UI.ViewModels
             }
         }
 
-        public Domain.ViewModels.NFCSend NFC
+        public Domain.ViewModels.NFCSend NFCSend
         {
             get
             {

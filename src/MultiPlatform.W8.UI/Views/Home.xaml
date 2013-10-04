@@ -55,6 +55,11 @@
                 Command="{Binding GoToMap, Mode=OneWay}" 
                 HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
             </Button>
+            <Button Content="{Binding Translation.Button_GoToNFC, Mode=OneWay, Source={StaticResource LabelsManager}}" 
+                    HorizontalAlignment="Center" Command="{Binding GoToNFCSend, Mode=OneWay}"
+                    VerticalAlignment="Center">
+
+            </Button>
         </StackPanel>
 
         <ProgressBar Grid.Row="0" Height="10" 
