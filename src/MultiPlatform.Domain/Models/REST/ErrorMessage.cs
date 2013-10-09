@@ -5,15 +5,17 @@ using System.Text;
 
 namespace MultiPlatform.Domain.Models.REST
 {
-    public class ErrorMessage
+    public enum ErrorType { HTTP, JSON, OTHER};
+    public class Error
     {
         private bool _HasError = false;
-        public bool HaError
+        public bool HasError
         {
             get { return _HasError; }
             set { _HasError = value; }
         }
         public string Message { get; set; }
-        public int ErrorCode { get; set; }
+        public string ErrorCode { get; set; }
+        public ErrorType Type { get; set; }
     }
 }

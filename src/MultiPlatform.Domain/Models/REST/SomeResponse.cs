@@ -20,6 +20,6 @@ namespace MultiPlatform.Domain.Models.REST
     /// </summary>
     public class SomeResponseREST : SomeResponse
     {
-        public ErrorMessage ErrorMessage { get; set; }
+        public Error ErrorMessage { get; set; }
     }
 }

@@ -48,6 +48,7 @@
     <Compile Include="Interfaces\IUx.cs" />
     <Compile Include="Models\ModelBase.cs" />
     <Compile Include="Models\REST\ErrorMessage.cs" />
+    <Compile Include="Models\REST\Result.cs" />
     <Compile Include="Models\REST\SomeResponse.cs" />
     <Compile Include="Models\Ui\Map\GeoPosition.cs" />
     <Compile Include="Models\Ui\Map\PushPin.cs" />
