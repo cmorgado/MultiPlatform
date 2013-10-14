@@ -1,5 +1,6 @@
-﻿<common:LayoutAwarePage
+﻿<code:BasePage
     x:Name="pageRoot"
+    xmlns:code="using:MultiPlatform.W8.UI.Code"
     x:Class="MultiPlatform.W8.UI.Views.Demo.NFCSend"
     DataContext="{Binding Source={StaticResource Locator}, Path=NFCSend}"
     xmlns:metroEventToCommand="using:MetroEventToCommand"
@@ -79,4 +80,4 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
     </Grid>
-</common:LayoutAwarePage>
+</code:BasePage>

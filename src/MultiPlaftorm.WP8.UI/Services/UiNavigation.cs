@@ -29,6 +29,10 @@ namespace MultiPlatform.WP8.UI.Services
                                                                            {
                                                                               typeof(Domain.ViewModels.NFCSend), "/Views/Demo/NFCSend.xaml"
                                                                           }
+                                                                          ,
+                                                                           {
+                                                                              typeof(Domain.ViewModels.SQLite), "/Views/Demo/SQLiteDemo.xaml"
+                                                                          }
                                                                      };
 
 

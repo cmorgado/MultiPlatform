@@ -112,6 +112,12 @@
     <Compile Include="..\MultiPlaftorm.WP8.UI\Services\UiUx.cs">
       <Link>Services\UiUx.cs</Link>
     </Compile>
+    <Compile Include="..\MultiPlaftorm.WP8.UI\SQLite\ServiceSQLite.cs">
+      <Link>SQLite\ServiceSQLite.cs</Link>
+    </Compile>
+    <Compile Include="..\MultiPlaftorm.WP8.UI\SQLite\Task.cs">
+      <Link>SQLite\Task.cs</Link>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -128,9 +134,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\UiNavigation.cs" />
     <Compile Include="Services\UiSettings.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\Demo\NFCSend.xaml.cs">
       <DependentUpon>NFCSend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Demo\SQLiteDemo.xaml.cs">
+      <DependentUpon>SQLiteDemo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Details.xaml.cs">
       <DependentUpon>Details.xaml</DependentUpon>
@@ -174,6 +185,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Demo\NFCSend.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Demo\SQLiteDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -235,6 +250,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MvvmLightLibs.4.1.27.1\lib\netcore45\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, Version=11.0">
+      <Name>Microsoft Visual C++ Runtime Package</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.WinRT, Version=3.8.0.2">
+      <Name>SQLite for Windows Runtime</Name>
+    </SDKReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">

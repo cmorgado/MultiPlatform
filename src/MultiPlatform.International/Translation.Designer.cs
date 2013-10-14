@@ -61,6 +61,15 @@ namespace MultiPlatform.International {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to add task.
+        /// </summary>
+        public static string AddTask {
+            get {
+                return ResourceManager.GetString("AddTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tech Refresh.
         /// </summary>
         public static string AppName {
@@ -124,6 +133,15 @@ namespace MultiPlatform.International {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Go to SQLite demo.
+        /// </summary>
+        public static string Button_GoToSQLite {
+            get {
+                return ResourceManager.GetString("Button_GoToSQLite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to start peer.
         /// </summary>
         public static string Button_StartPeer {
@@ -183,6 +201,24 @@ namespace MultiPlatform.International {
         public static string NFCSend_Title {
             get {
                 return ResourceManager.GetString("NFCSend_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQLite Demo.
+        /// </summary>
+        public static string SQLite_Title {
+            get {
+                return ResourceManager.GetString("SQLite_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to task name.
+        /// </summary>
+        public static string TaskName {
+            get {
+                return ResourceManager.GetString("TaskName", resourceCulture);
             }
         }
     }

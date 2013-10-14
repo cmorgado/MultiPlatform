@@ -155,6 +155,33 @@ namespace MultiPlatform.Domain.ViewModels
 
         }
 
+        private RelayCommand _GoToSQLiteDemo;
+        public RelayCommand GoToSQLiteDemo
+        {
+            get
+            {
+                return _GoToSQLiteDemo ?? (_GoToSQLiteDemo = new RelayCommand(
+                  () =>
+                  {
+
+                      try
+                      {
+
+                          _navigationService.Navigate<SQLite>();
+
+                      }
+                      catch (Exception ex)
+                      {
+
+                          throw ex;
+                      }
+
+                  }));
+            }
+
+        }
+
+
         private RelayCommand _ShowAlert;
         public RelayCommand ShowAlert
         {

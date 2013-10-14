@@ -39,6 +39,7 @@ namespace MultiPlatform.W8.UI.ViewModels
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ILocation, MultiPlatform.Shared.Services.LocationService>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ISettings, MultiPlatform.W8.UI.Services.UiSettings>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IPeerConnector, MultiPlatform.Shared.Services.SimplePeerConnector>();
+            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ISQLite, MultiPlatform.Shared.SQLite.ServiceSQLite>();
           
 
             SimpleIoc.Default.Register<Domain.ViewModels.Home>();
@@ -46,6 +47,7 @@ namespace MultiPlatform.W8.UI.ViewModels
             SimpleIoc.Default.Register<Domain.ViewModels.Login>();
             SimpleIoc.Default.Register<Domain.ViewModels.Map>();
             SimpleIoc.Default.Register<Domain.ViewModels.NFCSend>();
+            SimpleIoc.Default.Register<Domain.ViewModels.SQLite>();
 
         }
 
@@ -90,6 +92,14 @@ namespace MultiPlatform.W8.UI.ViewModels
             }
         }
 
+
+        public Domain.ViewModels.SQLite SQLite
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<Domain.ViewModels.SQLite>();
+            }
+        }
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

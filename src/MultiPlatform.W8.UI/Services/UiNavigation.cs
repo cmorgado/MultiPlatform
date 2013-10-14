@@ -23,6 +23,8 @@ namespace MultiPlatform.W8.UI.Services
                                                                             { typeof(MultiPlatform.Domain.ViewModels.Map),typeof(Map) }
                                                                              ,
                                                                             { typeof(MultiPlatform.Domain.ViewModels.NFCSend),typeof(Views.Demo.NFCSend) }
+  ,
+                                                                            { typeof(MultiPlatform.Domain.ViewModels.SQLite),typeof(Views.Demo.SQLiteDemo) }
 
                                                                   };
 

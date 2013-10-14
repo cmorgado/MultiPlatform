@@ -19,9 +19,9 @@ namespace MultiPlatform.W8.UI.Views.Demo
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class NFCSend : Code.BasePage
+    public sealed partial class SQLiteDemo : Code.BasePage
     {
-        public NFCSend()
+        public SQLiteDemo()
         {
             this.InitializeComponent();
         }
