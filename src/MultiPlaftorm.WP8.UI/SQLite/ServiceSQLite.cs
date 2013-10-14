@@ -15,6 +15,12 @@ namespace MultiPlatform.Shared.SQLite
         public static SQLiteAsyncConnection Connection { get; set; }
         private string dbpath = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "data.db3");
 
+
+        public ServiceSQLite()
+        {
+            Init();
+        }
+
         private async void Create()
         {
             Connection = new SQLiteAsyncConnection(dbpath);
@@ -43,6 +49,7 @@ namespace MultiPlatform.Shared.SQLite
 
             try
             {
+
                 SQLite.Task NewTask = new Task
                 {
                     IdTask = task.IdTask,

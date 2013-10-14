@@ -36,7 +36,7 @@ namespace MultiPlatform.Domain.ViewModels
         }
 
 
-        private Models.Ui.Task _NewTask;
+        private Models.Ui.Task _NewTask= new Models.Ui.Task();
         public Models.Ui.Task NewTask
         {
             get { return this._NewTask; }
@@ -65,18 +65,19 @@ namespace MultiPlatform.Domain.ViewModels
             }
         }
 
-        private RelayCommand _AddTasks;
-        public RelayCommand AddTasks
+        private RelayCommand _AddTask;
+        public RelayCommand AddTask
         {
             get
             {
-                return _AddTasks ?? (_AddTasks = new RelayCommand(
+                return _AddTask ?? (_AddTask = new RelayCommand(
                 async () =>
                 {
 
                     try
                     {
                         LoadingCounter++;
+                        this.NewTask.IdTask = Guid.NewGuid().ToString();
                         await _sqliteService.InsertTask(this.NewTask);
                         this.Items = await _sqliteService.GetAllTasks();
                         LoadingCounter--;
