@@ -25,6 +25,7 @@ namespace MultiPlatform.Domain.Code
         Failed,
         ReadyForTap,
         Disconnected,
-        TapNotSupported
+        TapNotSupported,
+        Connecting
     }
 }

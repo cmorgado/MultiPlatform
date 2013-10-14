@@ -171,4 +171,16 @@
   <data name="TaskName" xml:space="preserve">
     <value>task name</value>
   </data>
+  <data name="W8_AlternateIdentifier" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="W8_AlternateIdentity" xml:space="preserve">
+    <value>2e1663f3-a475-4a3f-b0bd-25170caeb8e1_nw69jpwj26hy8!App</value>
+  </data>
+  <data name="WP8_AlternateIdentifier" xml:space="preserve">
+    <value>WindowsPhone</value>
+  </data>
+  <data name="WP8_AlternateIdentity" xml:space="preserve">
+    <value>{c0556b85-d231-4028-9f98-9637d17782d3}</value>
+  </data>
 </root>

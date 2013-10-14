@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
+
 using Windows.Networking.Proximity;
 using Windows.Networking.Sockets;
 using Windows.Storage.Streams;
@@ -39,6 +40,8 @@ namespace MultiPlatform.Shared.Services
                 return;
             }
 
+
+
             PeerFinder.TriggeredConnectionStateChanged += TriggeredConnectionStateChanged;
 
             //foreach (var identity in alternateIdentities)
@@ -53,14 +56,34 @@ namespace MultiPlatform.Shared.Services
             //    }
             //}
 
+          
+#if NETFX_CORE 
+           if (!PeerFinder.AlternateIdentities.ContainsKey(International.Translation.WP8_AlternateIdentifier))
+            {
+                PeerFinder.AlternateIdentities.Add(International.Translation.WP8_AlternateIdentifier, International.Translation.WP8_AlternateIdentity );
+
+
+            }
+#else
+
+            if (!PeerFinder.AlternateIdentities.ContainsKey(International.Translation.W8_AlternateIdentifier))
+            {
+                PeerFinder.AlternateIdentities.Add(International.Translation.W8_AlternateIdentifier, International.Translation.W8_AlternateIdentity );
+
+
+            }
+#endif
+
             PeerFinder.AllowInfrastructure = true;
             PeerFinder.AllowBluetooth = true;
 
 #if NETFX_CORE
-             //   PeerFinder.AllowWiFiDirect = true;
+             PeerFinder.AllowWiFiDirect = true;
 #else
+
             PeerFinder.AllowWiFiDirect = false;
 #endif
+
         }
 
         /// <summary>
@@ -105,7 +128,7 @@ namespace MultiPlatform.Shared.Services
                         uint numBytesWritten = await _dataWriter.StoreAsync();
                         if (numBytesWritten > 0)
                         {
-                            Debug.WriteLine("Sent guide. Number of bytes written: {0} ", numBytesWritten);
+                            Debug.WriteLine("Sent  Number of bytes written: {0} ", numBytesWritten);
 
                         }
                         else
@@ -124,7 +147,7 @@ namespace MultiPlatform.Shared.Services
                 }
                 else
                 {
-                    Debug.WriteLine("BAD guide size:{0} ", imageBytes.Length);
+                    Debug.WriteLine("BAD  size:{0} ", imageBytes.Length);
                 }
             }
             else
@@ -138,15 +161,8 @@ namespace MultiPlatform.Shared.Services
         {
             switch (e.State)
             {
-                case TriggeredConnectState.PeerFound:
-                    UpdateConnectionStatus(ConnectionStatus.PeerFound);
-                    
-                    break;
                 case TriggeredConnectState.Canceled:
                     UpdateConnectionStatus(ConnectionStatus.Canceled);
-                    break;
-                case TriggeredConnectState.Failed:
-                    UpdateConnectionStatus(ConnectionStatus.Failed);
                     break;
                 case TriggeredConnectState.Completed:
                     StartSendReceive(e.Socket);
@@ -156,7 +172,21 @@ namespace MultiPlatform.Shared.Services
                     PeerFinder.Stop();
                     _peerFinderStarted = false;
                     break;
+                case TriggeredConnectState.Connecting:
+                    UpdateConnectionStatus(ConnectionStatus.Connecting);
+                    break;
+                case TriggeredConnectState.Failed:
+                    UpdateConnectionStatus(ConnectionStatus.Failed);
+                    break;
+                case TriggeredConnectState.Listening:
+                    break;
+                case TriggeredConnectState.PeerFound:
+                    UpdateConnectionStatus(ConnectionStatus.PeerFound);
+                    break;
+                default:
+                    break;
             }
+
         }
 
         void StartSendReceive(StreamSocket socket)
@@ -191,7 +221,7 @@ namespace MultiPlatform.Shared.Services
                         socketReader.ReadBytes(bytesIn);
                         Debug.WriteLine("ReadBytes End");
 
-                        // Raise PicReceived event
+                       
                         if (DataReceived != null)
                         {
                             DataReceivedEventArgs args = new DataReceivedEventArgs();

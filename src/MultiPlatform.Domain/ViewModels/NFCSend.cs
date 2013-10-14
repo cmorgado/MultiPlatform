@@ -28,46 +28,17 @@ namespace MultiPlatform.Domain.ViewModels
             , settingsService
             , uxService
             , locationService
-                , peerConnectorService
+            , peerConnectorService
             )
         {
 
             this.AppName = International.Translation.AppName;
             this.PageTitle = International.Translation.Map_Title;
-            _peerConnectorService.ConnectionStatusChanged += _peerConnectorService_ConnectionStatusChanged;
+          
 
         }
 
-        private void _peerConnectorService_ConnectionStatusChanged(object sender, ConnectionStatusChangedEventArgs e)
-        {
-
-
-            switch (e.Status)
-            {
-                case ConnectionStatus.PeerFound:
-
-
-                    break;
-                case ConnectionStatus.Completed:
-
-                    break;
-                case ConnectionStatus.Canceled:
-                    break;
-                case ConnectionStatus.Failed:
-                    break;
-                case ConnectionStatus.ReadyForTap:
-                    break;
-                case ConnectionStatus.Disconnected:
-                    break;
-                case ConnectionStatus.TapNotSupported:
-                    break;
-                default:
-                    break;
-            }
-
-
-
-        }
+      
 
         private RelayCommand _StartPeering;
         public RelayCommand StartPeering

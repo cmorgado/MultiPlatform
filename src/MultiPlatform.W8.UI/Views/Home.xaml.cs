@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Windows.ApplicationModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Notifications;
@@ -29,7 +30,30 @@ namespace MultiPlatform.W8.UI.Views
 
         protected  override void OnNavigatedTo(NavigationEventArgs e)
         {
-          
+            Package package = Package.Current;
+            PackageId packageId = package.Id;
+            PackageVersion version = packageId.Version;
+
+            String output = String.Format(
+                               "Name: \"{0}\"\n" +
+                               "Version: {1}.{2}.{3}.{4}\n" +
+                               "Architecture: {5}\n" +
+                               "ResourceId: \"{6}\"\n" +
+                               "Publisher: \"{7}\"\n" +
+                               "PublisherId: \"{8}\"\n" +
+                               "FullName: \"{9}\"\n" +
+                               "FamilyName: \"{10}\"\n" +
+                               "IsFramework: {11}",
+                               packageId.Name,
+                               version.Major, version.Minor, version.Build, version.Revision,
+                               packageId.Architecture,
+                               packageId.ResourceId,
+                               packageId.Publisher,
+                               packageId.PublisherId,
+                               packageId.FullName,
+                               packageId.FamilyName,
+                               package.IsFramework);
+
             base.OnNavigatedTo(e);
         }
 

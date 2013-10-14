@@ -221,5 +221,41 @@ namespace MultiPlatform.International {
                 return ResourceManager.GetString("TaskName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows.
+        /// </summary>
+        public static string W8_AlternateIdentifier {
+            get {
+                return ResourceManager.GetString("W8_AlternateIdentifier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2e1663f3-a475-4a3f-b0bd-25170caeb8e1_nw69jpwj26hy8!App.
+        /// </summary>
+        public static string W8_AlternateIdentity {
+            get {
+                return ResourceManager.GetString("W8_AlternateIdentity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WindowsPhone.
+        /// </summary>
+        public static string WP8_AlternateIdentifier {
+            get {
+                return ResourceManager.GetString("WP8_AlternateIdentifier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {c0556b85-d231-4028-9f98-9637d17782d3}.
+        /// </summary>
+        public static string WP8_AlternateIdentity {
+            get {
+                return ResourceManager.GetString("WP8_AlternateIdentity", resourceCulture);
+            }
+        }
     }
 }

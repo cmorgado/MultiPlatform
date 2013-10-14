@@ -36,7 +36,7 @@ namespace MultiPlatform.Domain.ViewModels
 
         #region VM Props
 
-       
+
 
 
         private string _AppName;
@@ -220,9 +220,16 @@ namespace MultiPlatform.Domain.ViewModels
 
         void _peerConnectorService_DataReceived(object sender, DataReceivedEventArgs e)
         {
+
+
+
             _uxService.ShowToast(Utils.GetString(e.Bytes));
 
+            if (DataReceived != null)
+            {
+                DataReceived(this, new DataReceivedEventArgs());
 
+            }
         }
 
         void _peerConnectorService_ConnectionStatusChanged(object sender, ConnectionStatusChangedEventArgs e)
@@ -243,9 +250,11 @@ namespace MultiPlatform.Domain.ViewModels
                     break;
             }
 
+            _uxService.ShowToast(e.Status.ToString());
+
             if (ConnectionStatusChanged != null)
                 ConnectionStatusChanged(this, new ConnectionStatusChangedEventArgs() { Status = e.Status });
-            _uxService.ShowToast(e.Status.ToString());
+
         }
 
 
