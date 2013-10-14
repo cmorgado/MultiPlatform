@@ -19,8 +19,19 @@ Base solution for building Windows Store and Windows Phone 8 app
 * Example of difference between WP8 and W8 using SettingsPane for the Login feature
 * Location enable apps 
 * App settings
+* NFC communication
+* SQLite
 
 Much more to come.... 
+
+## NuGet Packages used:
+* Cimbalino toolkit
+* Coding4Fun toolkit
+* sqlite-net
+* MetroEventoToCommand
+* MVVM Light
+* JSON.NET
+* Callisto
 
 
 ## Acknowledgements
