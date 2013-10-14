@@ -19,8 +19,11 @@
     shell:SystemTray.IsVisible="True"
      DataContext="{Binding Source={StaticResource Locator}, Path=SQLite}"
     >
-
-    <!--LayoutRoot is the root grid where all page content is placed-->
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <cmd:EventToCommand Command="{Binding LoadTasks, Mode=OneWay}"   />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -41,10 +44,23 @@
             <StackPanel >
                 <TextBlock TextWrapping="Wrap" Text="{Binding Translation.TaskName, Mode=OneWay, Source={StaticResource LabelsManager}}"/>
                 <TextBox Height="72" TextWrapping="Wrap" Text="{Binding NewTask.Name, Mode=TwoWay}"/>
-                <Button Content="{Binding Translation.AddTask, Mode=OneWay, Source={StaticResource LabelsManager}}"/>
+                <Button Content="{Binding Translation.AddTask, Mode=OneWay, Source={StaticResource LabelsManager}}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <cmd:EventToCommand Command="{Binding AddTask, Mode=OneWay}"/>
+
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
 
             </StackPanel>
-            <phone:LongListSelector Grid.Row="1"/>
+            <phone:LongListSelector Grid.Row="1" ItemsSource="{Binding Items}">
+                <phone:LongListSelector.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                    </DataTemplate>
+                </phone:LongListSelector.ItemTemplate>
+            </phone:LongListSelector>
 
         </Grid>
     </Grid>

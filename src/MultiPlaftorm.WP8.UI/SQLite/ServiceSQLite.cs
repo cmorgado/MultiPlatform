@@ -26,7 +26,7 @@ namespace MultiPlatform.Shared.SQLite
             Connection = new SQLiteAsyncConnection(dbpath);
 
             // create all tables
-            await Connection.CreateTableAsync<SQLite.Task>();
+            Connection.CreateTableAsync<SQLite.Task>();
         }
 
 
@@ -34,7 +34,7 @@ namespace MultiPlatform.Shared.SQLite
         {
             try
             {
-                await ApplicationData.Current.LocalFolder.GetFileAsync(dbpath);
+                await ApplicationData.Current.LocalFolder.GetFileAsync("data.db3");
                 Connection = new SQLiteAsyncConnection(dbpath);
 
             }
