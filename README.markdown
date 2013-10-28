@@ -1,13 +1,13 @@
 # MultiPlatform
 =============
 
-Base solution for building Windows Store and Windows Phone 8 app
+Base solution for building Windows Store (8.0/8.1) and Windows Phone 8 app
 
 ## BEST PRATICES 
 
 * Build with MVVM & PCL
 * Get all your business rules one one place only
-* Easily build WP8 and Win8 apps
+* Easily build WP8 , Win8 , Win8.1  apps
 * Internationalization easy
 
 
@@ -22,7 +22,7 @@ Base solution for building Windows Store and Windows Phone 8 app
 * NFC communication
 * SQLite
 
-Much more to come.... 
+Much more to come.... In-App-Purchase, Camera etc
 
 ## NuGet Packages used:
 * Cimbalino toolkit
