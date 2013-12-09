@@ -104,6 +104,15 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\MultiPlaftorm.WP8.UI\Services\SimplePeerConnector.cs">
+      <Link>Services\SimplePeerConnector.cs</Link>
+    </Compile>
+    <Compile Include="..\MultiPlaftorm.WP8.UI\SQLite\ServiceSQLite.cs">
+      <Link>SQLite\ServiceSQLite.cs</Link>
+    </Compile>
+    <Compile Include="..\MultiPlaftorm.WP8.UI\SQLite\Task.cs">
+      <Link>SQLite\Task.cs</Link>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -111,8 +120,14 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LocationService.cs" />
+    <Compile Include="Services\UiStorage.cs" />
+    <Compile Include="Services\UiUx.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="Views\UC\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -136,6 +151,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UC\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -179,11 +198,8 @@
   <ItemGroup>
     <Folder Include="Code\" />
     <Folder Include="Common\" />
-    <Folder Include="Services\" />
-    <Folder Include="SQLite\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Demo\" />
-    <Folder Include="Views\UC\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
