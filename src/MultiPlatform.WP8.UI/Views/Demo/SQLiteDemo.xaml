@@ -1,0 +1,68 @@
+﻿<code:BasePage
+    x:Class="MultiPlatform.WP8.UI.Views.Demo.SQLiteDemo"
+     xmlns:code="clr-namespace:MultiPlatform.WP8.UI.Code"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP8"
+    
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+     DataContext="{Binding Source={StaticResource Locator}, Path=SQLite}"
+    >
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <cmd:EventToCommand Command="{Binding LoadTasks, Mode=OneWay}"   />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="{Binding AppName}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="{Binding PageTitle}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="180"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel >
+                <TextBlock TextWrapping="Wrap" Text="{Binding Translation.TaskName, Mode=OneWay, Source={StaticResource LabelsManager}}"/>
+                <TextBox Height="72" TextWrapping="Wrap" Text="{Binding NewTask.Name, Mode=TwoWay}"/>
+                <Button Content="{Binding Translation.AddTask, Mode=OneWay, Source={StaticResource LabelsManager}}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <cmd:EventToCommand Command="{Binding AddTask, Mode=OneWay}"/>
+
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+
+            </StackPanel>
+            <phone:LongListSelector Grid.Row="1" ItemsSource="{Binding Items}">
+                <phone:LongListSelector.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                    </DataTemplate>
+                </phone:LongListSelector.ItemTemplate>
+            </phone:LongListSelector>
+
+        </Grid>
+    </Grid>
+
+</code:BasePage>

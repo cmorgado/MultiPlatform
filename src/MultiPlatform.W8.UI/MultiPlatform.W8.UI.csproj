@@ -102,22 +102,22 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\MultiPlaftorm.WP8.UI\Services\LocationService.cs">
+    <Compile Include="..\MultiPlatform.WP8.UI\Services\LocationService.cs">
       <Link>Services\LocationService.cs</Link>
     </Compile>
-    <Compile Include="..\MultiPlaftorm.WP8.UI\Services\SimplePeerConnector.cs">
+    <Compile Include="..\MultiPlatform.WP8.UI\Services\SimplePeerConnector.cs">
       <Link>Services\SimplePeerConnector.cs</Link>
     </Compile>
-    <Compile Include="..\MultiPlaftorm.WP8.UI\Services\UiStorage.cs">
+    <Compile Include="..\MultiPlatform.WP8.UI\Services\UiStorage.cs">
       <Link>Services\UiStorage.cs</Link>
     </Compile>
-    <Compile Include="..\MultiPlaftorm.WP8.UI\Services\UiUx.cs">
+    <Compile Include="..\MultiPlatform.WP8.UI\Services\UiUx.cs">
       <Link>Services\UiUx.cs</Link>
     </Compile>
-    <Compile Include="..\MultiPlaftorm.WP8.UI\SQLite\ServiceSQLite.cs">
+    <Compile Include="..\MultiPlatform.WP8.UI\SQLite\ServiceSQLite.cs">
       <Link>SQLite\ServiceSQLite.cs</Link>
     </Compile>
-    <Compile Include="..\MultiPlaftorm.WP8.UI\SQLite\Task.cs">
+    <Compile Include="..\MultiPlatform.WP8.UI\SQLite\Task.cs">
       <Link>SQLite\Task.cs</Link>
     </Compile>
     <Compile Include="App.xaml.cs">
@@ -263,8 +263,8 @@
     <SDKReference Include="Microsoft.VCLibs, Version=11.0">
       <Name>Microsoft Visual C++ Runtime Package</Name>
     </SDKReference>
-    <SDKReference Include="SQLite.WinRT, Version=3.8.1">
-      <Name>SQLite for Windows Runtime</Name>
+    <SDKReference Include="SQLite.WinRT, Version=3.8.2">
+      <Name>SQLite for Windows Runtime %28SQLite.WinRT, Version=3.8.2%29</Name>
     </SDKReference>
   </ItemGroup>
   <ItemGroup />

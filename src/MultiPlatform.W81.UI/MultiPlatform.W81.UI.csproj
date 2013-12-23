@@ -104,13 +104,13 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\MultiPlaftorm.WP8.UI\Services\SimplePeerConnector.cs">
+    <Compile Include="..\MultiPlatform.WP8.UI\Services\SimplePeerConnector.cs">
       <Link>Services\SimplePeerConnector.cs</Link>
     </Compile>
-    <Compile Include="..\MultiPlaftorm.WP8.UI\SQLite\ServiceSQLite.cs">
+    <Compile Include="..\MultiPlatform.WP8.UI\SQLite\ServiceSQLite.cs">
       <Link>SQLite\ServiceSQLite.cs</Link>
     </Compile>
-    <Compile Include="..\MultiPlaftorm.WP8.UI\SQLite\Task.cs">
+    <Compile Include="..\MultiPlatform.WP8.UI\SQLite\Task.cs">
       <Link>SQLite\Task.cs</Link>
     </Compile>
     <Compile Include="App.xaml.cs">
@@ -191,8 +191,8 @@
     <SDKReference Include="Microsoft.VCLibs, version=12.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows</Name>
     </SDKReference>
-    <SDKReference Include="SQLite.WinRT81, Version=3.8.0.2">
-      <Name>SQLite for Windows Runtime %28Windows 8.1%29</Name>
+    <SDKReference Include="SQLite.WinRT81, Version=3.8.2">
+      <Name>SQLite for Windows Runtime %28Windows 8.1%291</Name>
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
