@@ -1,5 +1,6 @@
 ﻿using MultiPlatform.Domain.Interfaces;
-using MultiPlatform.W8.UI.Views;
+using MultiPlatform.W81.UI.Views;
+using MultiPlatform.W81.UI.Views.Demo;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +9,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
 
-namespace MultiPlatform.W8.UI.Services
+namespace MultiPlatform.W81.UI.Services
 {
     public class UiNavigation : Domain.Interfaces.INavigation<Domain.Interfaces.NavigationModes>
     {
@@ -22,9 +23,9 @@ namespace MultiPlatform.W8.UI.Services
                                                                              ,
                                                                             { typeof(MultiPlatform.Domain.ViewModels.Map),typeof(Map) }
                                                                              ,
-                                                                            { typeof(MultiPlatform.Domain.ViewModels.NFCSend),typeof(Views.Demo.NFCSend) }
+                                                                            { typeof(MultiPlatform.Domain.ViewModels.NFCSend),typeof(NFCSend) }
   ,
-                                                                            { typeof(MultiPlatform.Domain.ViewModels.SQLite),typeof(Views.Demo.SQLiteDemo) }
+                                                                            { typeof(MultiPlatform.Domain.ViewModels.SQLite),typeof(SQLiteDemo) }
 
                                                                   };
 

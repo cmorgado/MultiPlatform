@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using MultiPlatform.Domain.Interfaces;
 
-namespace MultiPlatform.Shared.Services
+namespace MultiPlatform.W81.UI.Services
 {
     public class UiStorage : IStorage 
     {

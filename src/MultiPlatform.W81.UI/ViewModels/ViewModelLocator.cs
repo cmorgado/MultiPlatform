@@ -18,7 +18,7 @@ using Microsoft.Practices.ServiceLocation;
 
 
 
-namespace MultiPlatform.W8.UI.ViewModels
+namespace MultiPlatform.W8x.Shared.UI.ViewModels
 {
     /// <summary>
     /// This class contains static references to all the view models in the
@@ -33,21 +33,20 @@ namespace MultiPlatform.W8.UI.ViewModels
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.INavigation<MultiPlatform.Domain.Interfaces.NavigationModes>, MultiPlatform.W8.UI.Services.UiNavigation>();
-            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IStorage, MultiPlatform.Shared.Services.UiStorage>();
-            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IUx, MultiPlatform.Shared.Services.UiUx>();
-            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ILocation, MultiPlatform.Shared.Services.LocationService>();
+            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.INavigation<MultiPlatform.Domain.Interfaces.NavigationModes>, MultiPlatform.W81.UI.Services.UiNavigation>();
+            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IStorage, MultiPlatform.W81.UI.Services.UiStorage>();
+            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IUx, MultiPlatform.W81.UI.Services.UiUx>();
+            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ILocation, MultiPlatform.W81.UI.Services.LocationService>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ISettings, MultiPlatform.W8x.Shared.UI.Services.UiSettings>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IPeerConnector, MultiPlatform.Shared.Services.SimplePeerConnector>();
-            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ISQLite, MultiPlatform.Shared.SQLite.ServiceSQLite>();
-          
+           
 
             SimpleIoc.Default.Register<Domain.ViewModels.Home>();
             SimpleIoc.Default.Register<Domain.ViewModels.Details>();
-            SimpleIoc.Default.Register<Domain.ViewModels.Login>();
-            SimpleIoc.Default.Register<Domain.ViewModels.Map>();
-            SimpleIoc.Default.Register<Domain.ViewModels.NFCSend>();
-            SimpleIoc.Default.Register<Domain.ViewModels.SQLite>();
+            //SimpleIoc.Default.Register<Domain.ViewModels.Login>();
+            //SimpleIoc.Default.Register<Domain.ViewModels.Map>();
+            //SimpleIoc.Default.Register<Domain.ViewModels.NFCSend>();
+            //SimpleIoc.Default.Register<Domain.ViewModels.SQLite>();
 
         }
 

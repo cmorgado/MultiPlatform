@@ -7,7 +7,7 @@ using MultiPlatform.Domain.Code;
 using Windows.ApplicationModel;
 using Windows.Networking.Connectivity;
 
-namespace MultiPlatform.W8.UI.Services
+namespace MultiPlatform.W8x.Shared.UI.Services
 {
     public class UiSettings : Domain.Interfaces.ISettings
     {

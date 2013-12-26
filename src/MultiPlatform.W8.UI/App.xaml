@@ -9,7 +9,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <LabelsInternational:PublicInternational x:Key="LabelsManager" xmlns:LabelsInternational="using:MultiPlatform.International"/>
-            <common:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" xmlns:common="using:MultiPlatform.W8.UI.Common"/>
+            <common:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" xmlns:common="using:MultiPlatform.W8x.Shared.UI.Converters"/>
             <vm:ViewModelLocator xmlns:vm="using:MultiPlatform.W8.UI.ViewModels"
                            x:Key="Locator" />
             <ResourceDictionary.MergedDictionaries>

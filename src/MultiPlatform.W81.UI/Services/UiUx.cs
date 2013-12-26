@@ -17,7 +17,7 @@ using Windows.UI;
 
 
 
-namespace MultiPlatform.Shared.Services
+namespace MultiPlatform.W81.UI.Services
 {
     public class UiUx : MultiPlatform.Domain.Interfaces.IUx
     {

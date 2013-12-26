@@ -7,7 +7,7 @@ using Windows.Devices.Geolocation;
 
 
 
-namespace MultiPlatform.Shared.Services
+namespace MultiPlatform.W81.UI.Services
 {
     public static class LocationExtensions
     {
