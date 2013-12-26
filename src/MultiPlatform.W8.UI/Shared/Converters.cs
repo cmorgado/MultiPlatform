@@ -36,4 +36,72 @@ namespace MultiPlatform.W8x.Shared.UI.Converters
             return value is Visibility && (Visibility)value == Visibility.Visible;
         }
     }
+
+    public sealed class NegativeBooleanToVisibilityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            return (value is bool && !(bool)value) ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            return value is Visibility && (Visibility)value == Visibility.Collapsed;
+        }
+    }
+
+    public sealed class NegativeStringToVisibilityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            if (value == null)
+                return Visibility.Visible;
+            else
+                if (!string.IsNullOrEmpty(value.ToString()))
+                    return Visibility.Collapsed;
+                else
+                    return Visibility.Visible;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            return value is Visibility && (Visibility)value == Visibility.Collapsed;
+        }
+    }
+
+
+
+    public class TextEmptyHideConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string culture)
+        {
+            if (string.IsNullOrEmpty(value.ToString()))
+                return Visibility.Collapsed
+                    ;
+            else
+                return Visibility.Visible;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string culture)
+        {
+            return value;
+        }
+    }
+
+    public class UpperConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            if (value != null)
+                return value.ToString().ToUpper();
+            else
+                return "";
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            return value;
+        }
+    }
+
 }

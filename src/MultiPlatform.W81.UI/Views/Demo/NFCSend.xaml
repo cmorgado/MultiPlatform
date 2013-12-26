@@ -1,7 +1,8 @@
-﻿<Page
+﻿<code:BasePage
     x:Name="pageRoot"
     x:Class="MultiPlatform.W81.UI.Views.Demo.NFCSend"
-    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+     xmlns:code="using:MultiPlatform.W81.UI.Code"
+    DataContext="{Binding Source={StaticResource Locator}, Path=NFCSend}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MultiPlatform.W81.UI.Views.Demo"
@@ -47,4 +48,4 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
     </Grid>
-</Page>
+</code:BasePage>

@@ -43,10 +43,10 @@ namespace MultiPlatform.W8x.Shared.UI.ViewModels
 
             SimpleIoc.Default.Register<Domain.ViewModels.Home>();
             SimpleIoc.Default.Register<Domain.ViewModels.Details>();
-            //SimpleIoc.Default.Register<Domain.ViewModels.Login>();
-            //SimpleIoc.Default.Register<Domain.ViewModels.Map>();
-            //SimpleIoc.Default.Register<Domain.ViewModels.NFCSend>();
-            //SimpleIoc.Default.Register<Domain.ViewModels.SQLite>();
+            SimpleIoc.Default.Register<Domain.ViewModels.Login>();
+            SimpleIoc.Default.Register<Domain.ViewModels.Map>();
+            SimpleIoc.Default.Register<Domain.ViewModels.NFCSend>();
+            SimpleIoc.Default.Register<Domain.ViewModels.SQLite>();
 
         }
 

@@ -2,14 +2,20 @@
     x:Class="MultiPlatform.W8.UI.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    
+    xmlns:converters="using:MultiPlatform.W8x.Shared.UI.Converters"
     RequestedTheme="Light"
     xmlns:local="using:MultiPlatform.W8.UI">
 
     <Application.Resources>
         <ResourceDictionary>
             <LabelsInternational:PublicInternational x:Key="LabelsManager" xmlns:LabelsInternational="using:MultiPlatform.International"/>
-            <common:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" xmlns:common="using:MultiPlatform.W8x.Shared.UI.Converters"/>
+            <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <converters:NegativeBooleanToVisibilityConverter x:Key="NegativeBooleanToVisibilityConverter" />
+            <converters:NegativeStringToVisibilityConverter x:Key="NegativeStringToVisibilityConverter" />
+            <converters:UpperConverter x:Key="UpperConverter"/>
+
+            <c4fControlsConverters:StringToVisibilityConverter x:Key="StringToVisibilityConverter" xmlns:c4fControlsConverters="using:Coding4Fun.Toolkit.Controls.Converters"/>
+
             <vm:ViewModelLocator xmlns:vm="using:MultiPlatform.W8.UI.ViewModels"
                            x:Key="Locator" />
             <ResourceDictionary.MergedDictionaries>
