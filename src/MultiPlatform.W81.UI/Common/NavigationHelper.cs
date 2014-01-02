@@ -323,6 +323,8 @@ namespace MultiPlatform.W81.UI.Common
                     this.LoadState(this, new LoadStateEventArgs(e.Parameter, (Dictionary<String, Object>)frameState[this._pageKey]));
                 }
             }
+
+            
         }
 
         /// <summary>

@@ -77,6 +77,47 @@ namespace MultiPlatform.Domain.ViewModels
         }
 
 
+        private RelayCommand _Load;
+        public RelayCommand Load
+        {
+            get
+            {
+                return _Load ?? (_Load = new RelayCommand(
+                  () =>
+                  {
+
+                      try
+                      {
+
+                          switch (this.NavigationType)
+                          {
+                              case NavigationModes.New:
+                                  break;
+                              case NavigationModes.Back:
+                                  break;
+                              case NavigationModes.Forward:
+                                  break;
+                              case NavigationModes.Refresh:
+                                  break;
+                              case NavigationModes.Reset:
+                                  break;
+                              default:
+                                  break;
+                          }
+
+                      }
+                      catch (Exception ex)
+                      {
+
+                          throw ex;
+                      }
+
+                  }));
+            }
+
+        }
+
+
         private RelayCommand _GoDetails;
         public RelayCommand GoDetails
         {

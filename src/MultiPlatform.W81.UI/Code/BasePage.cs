@@ -16,6 +16,7 @@ namespace MultiPlatform.W81.UI.Code
             var viewModel = this.DataContext as Domain.ViewModels.BaseViewModel;
             string p = e.Parameter as string;
             viewModel.navigationParameterJson = p;
+            viewModel.CanGoBack = this.Frame.CanGoBack;
             switch (e.NavigationMode)
             {
                 case Windows.UI.Xaml.Navigation.NavigationMode.Back:

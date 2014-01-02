@@ -128,9 +128,6 @@
     <Compile Include="Common\LayoutAwarePage.cs" />
     <Compile Include="Common\RichTextColumns.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\UiNavigation.cs" />
     <Compile Include="Services\UiSettings.cs" />
@@ -144,13 +141,16 @@
     <Compile Include="Views\Demo\SQLiteDemo.xaml.cs">
       <DependentUpon>SQLiteDemo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Details.xaml.cs">
+    <Compile Include="Views\Demo\UC\TopMenu.xaml.cs">
+      <DependentUpon>TopMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Demo\Details.xaml.cs">
       <DependentUpon>Details.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Home.xaml.cs">
+    <Compile Include="Views\Demo\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Map.xaml.cs">
+    <Compile Include="Views\Demo\Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UC\Login.xaml.cs">
@@ -181,10 +181,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\Demo\NFCSend.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -193,15 +189,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Details.xaml">
+    <Page Include="Views\Demo\UC\TopMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Home.xaml">
+    <Page Include="Views\Demo\Details.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Map.xaml">
+    <Page Include="Views\Demo\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Demo\Map.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

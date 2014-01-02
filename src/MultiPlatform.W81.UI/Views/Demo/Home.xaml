@@ -9,11 +9,14 @@
     xmlns:common="using:MultiPlatform.W81.UI.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+    xmlns:UC="using:MultiPlatform.W81.UI.Views.Demo.UC"
+    
+    
     mc:Ignorable="d">
 
     <Page.Resources>
-        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">My Application</x:String>
+      
     </Page.Resources>
 
     <!--
@@ -32,20 +35,41 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Back button and page title -->
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
-                        Style="{StaticResource NavigationBackButtonNormalStyle}"
-                        VerticalAlignment="Top"
-                        AutomationProperties.Name="Back"
-                        AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
-        </Grid>
+        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+            <Button Content="{Binding Translation.Button_GoToDetails, Mode=OneWay, Source={StaticResource LabelsManager}}" 
+                Command="{Binding GoDetails, Mode=OneWay}" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+            </Button>
+
+            <Button Content="{Binding Translation.Button_Alert, Mode=OneWay, Source={StaticResource LabelsManager}}" 
+                Command="{Binding ShowAlert, Mode=OneWay}" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+            </Button>
+            <Button Content="{Binding Translation.Button_GoToLogin, Mode=OneWay, Source={StaticResource LabelsManager}}" 
+                Command="{Binding GoToLogin, Mode=OneWay}" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+            </Button>
+            <Button Content="{Binding Translation.Button_GoToMap, Mode=OneWay, Source={StaticResource LabelsManager}}" 
+                Command="{Binding GoToMap, Mode=OneWay}" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+            </Button>
+            <Button Content="{Binding Translation.Button_GoToNFC, Mode=OneWay, Source={StaticResource LabelsManager}}" 
+                    HorizontalAlignment="Center" Command="{Binding GoToNFCSend, Mode=OneWay}"
+                    VerticalAlignment="Center">
+
+            </Button>
+            <Button Content="{Binding Translation.Button_GoToSQLite, Mode=OneWay, Source={StaticResource LabelsManager}}" 
+                    HorizontalAlignment="Center" Command="{Binding GoToSQLiteDemo, Mode=OneWay}"
+                    VerticalAlignment="Center">
+
+            </Button>
+        </StackPanel>
+
+        <ProgressBar Grid.Row="0" Height="10" 
+                     Margin="0,0,0,0" VerticalAlignment="Top"
+                     Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                     IsIndeterminate="True" 
+                   />
+        <UC:TopMenu DataContext="{Binding}"></UC:TopMenu>
     </Grid>
 </code:BasePage>

@@ -93,7 +93,7 @@ namespace MultiPlatform.W81.UI.Views.Demo
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            navigationHelper.OnNavigatedTo(e);
+            navigationHelper.OnNavigatedTo(e); base.OnNavigatedTo(e);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)

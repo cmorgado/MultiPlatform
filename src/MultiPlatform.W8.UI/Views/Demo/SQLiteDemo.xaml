@@ -10,11 +10,14 @@
     xmlns:common="using:MultiPlatform.W8.UI.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+     xmlns:UC="using:MultiPlatform.W8.UI.Views.Demo.UC"
+    
     mc:Ignorable="d">
 
     <Page.Resources>
 
-     
+
     </Page.Resources>
     <metroEventToCommand:EventToCommandManager.Collection>
         <metroEventToCommand:EventToCommand Command="{Binding LoadTasks}" 
@@ -27,14 +30,7 @@
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{Binding AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
-        </Grid>
+        <UC:TopMenu DataContext="{Binding}"></UC:TopMenu>
         <StackPanel Grid.Row="1" Margin="140,0" >
             <TextBlock TextWrapping="Wrap" Text="{Binding Translation.TaskName, Mode=OneWay, Source={StaticResource LabelsManager}}"/>
             <TextBox TextWrapping="Wrap" Text="{Binding NewTask.Name, Mode=TwoWay}"/>
@@ -45,12 +41,12 @@
             <ListView ItemsSource="{Binding Items}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        
+
                         <TextBlock Text="{Binding Name}"></TextBlock>
-                        
+
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                
+
             </ListView>
         </StackPanel>
         <VisualStateManager.VisualStateGroups>

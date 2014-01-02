@@ -25,18 +25,19 @@ namespace MultiPlatform.Domain.ViewModels
         public event EventHandler<DataReceivedEventArgs> DataReceived;
 
 
-        public string navigationParameterJson;
-        public T NavigationParameter<T>()
-        {
-            return navigationParameterJson.FromJson<T>();
-        }
+
 
 
 
 
         #region VM Props
 
+        public string navigationParameterJson;
 
+        public T NavigationParameter<T>()
+        {
+            return navigationParameterJson.FromJson<T>();
+        }
 
 
         private string _AppName;
@@ -138,6 +139,19 @@ namespace MultiPlatform.Domain.ViewModels
                 }
             }
         }
+
+        private bool _CanGoBack = false;
+        public bool CanGoBack
+        {
+            get { return _CanGoBack; }
+            set
+            {
+                _CanGoBack = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+
         #endregion
 
         #region Common Commands
