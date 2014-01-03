@@ -118,19 +118,19 @@ namespace MultiPlatform.Domain.ViewModels
         }
 
 
-        private RelayCommand _GoDetails;
-        public RelayCommand GoDetails
+        private RelayCommand<string> _GoDetails;
+        public RelayCommand<string> GoDetails
         {
             get
             {
-                return _GoDetails ?? (_GoDetails = new RelayCommand(
-                  () =>
+                return _GoDetails ?? (_GoDetails = new RelayCommand<string>(
+                  (parameter) =>
                   {
 
                       try
                       {
 
-                          _navigationService.Navigate<Details>(false);
+                          _navigationService.Navigate<Details>(false, parameter);
 
                       }
                       catch (Exception ex)

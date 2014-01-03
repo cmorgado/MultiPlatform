@@ -33,7 +33,7 @@
         <UC:TopMenu DataContext="{Binding}"></UC:TopMenu>
         <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
             <Button Content="{Binding Translation.Button_GoToDetails, Mode=OneWay, Source={StaticResource LabelsManager}}" 
-                Command="{Binding GoDetails, Mode=OneWay}" 
+                Command="{Binding GoDetails, Mode=OneWay}" CommandParameter="Hello parameter"
                 HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
             </Button>
 

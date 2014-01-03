@@ -15,8 +15,8 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MultiPlatform.W8.UI.App">
-      <VisualElements DisplayName="MultiPlatform.W8.UI" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="MultiPlatform.W8.UI" ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
-        <DefaultTile ShowName="allLogos" />
+      <VisualElements DisplayName="MultiPlatform W8" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="MultiPlatform.W8.UI" ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
+        <DefaultTile ShowName="logoOnly" />
         <SplashScreen Image="Assets\SplashScreen.png" />
       </VisualElements>
     </Application>
