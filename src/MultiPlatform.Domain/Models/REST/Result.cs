@@ -9,5 +9,10 @@ namespace MultiPlatform.Domain.Models.REST
     {
         public Error Error { get; set; }
         public T DATA { get; set; }
+
+        public RESTResult()
+        {
+            Error = new Error();
+        }
     }
 }
