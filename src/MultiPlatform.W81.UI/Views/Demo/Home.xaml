@@ -71,5 +71,33 @@
                      IsIndeterminate="True" 
                    />
         <UC:TopMenu DataContext="{Binding}"></UC:TopMenu>
+
+        <!--<VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Narrow">
+                    <Storyboard>
+
+                        <ObjectAnimationUsingKeyFrames
+                    Storyboard.TargetName="SectionMenu"
+                    Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Snapped">
+                    <Storyboard>
+
+                        <ObjectAnimationUsingKeyFrames
+                    Storyboard.TargetName="SectionMenu"
+                    Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+
+                    </Storyboard>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>-->
     </Grid>
 </code:BasePage>
