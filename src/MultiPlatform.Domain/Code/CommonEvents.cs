@@ -7,6 +7,22 @@ using System.Threading.Tasks;
 
 namespace MultiPlatform.Domain.Code
 {
+
+    public class InternetConnectionChangedEventArgs : EventArgs
+    {
+        public InternetConnectionChangedEventArgs(bool isConnected)
+        {
+            this.isConnected = isConnected;
+        }
+
+        private bool isConnected;
+        public bool IsConnected
+        {
+            get { return isConnected; }
+        }
+    }
+      
+
     public class DataReceivedEventArgs : EventArgs
     {
         public byte[] Bytes { get;  set; }

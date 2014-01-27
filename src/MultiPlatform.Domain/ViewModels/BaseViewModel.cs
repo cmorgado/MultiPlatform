@@ -20,6 +20,7 @@ namespace MultiPlatform.Domain.ViewModels
         public readonly IUx _uxService;
         public readonly ILocation _locationService;
         public readonly IPeerConnector _peerConnectorService;
+        public readonly INetwork _networkService;
 
         public event EventHandler<ConnectionStatusChangedEventArgs> ConnectionStatusChanged;
         public event EventHandler<DataReceivedEventArgs> DataReceived;
@@ -219,6 +220,7 @@ namespace MultiPlatform.Domain.ViewModels
             , IUx uxService
             , ILocation locationService
             , IPeerConnector peerConnectorService
+            , INetwork networkService
            )
         {
             _navigationService = navigationService;
@@ -227,6 +229,8 @@ namespace MultiPlatform.Domain.ViewModels
             _uxService = uxService;
             _locationService = locationService;
             _peerConnectorService = peerConnectorService;
+             _networkService = networkService;
+
 
             _peerConnectorService.ConnectionStatusChanged += _peerConnectorService_ConnectionStatusChanged;
             _peerConnectorService.DataReceived += _peerConnectorService_DataReceived;
@@ -271,7 +275,13 @@ namespace MultiPlatform.Domain.ViewModels
 
         }
 
+        #region Internet Connection
 
+        void _networkService_InternetConnectionChanged(object sender, InternetConnectionChangedEventArgs e)
+        {
+            this.IsConnected = e.IsConnected;
+        }
+        #endregion
 
     }
 }

@@ -10,6 +10,6 @@ namespace MultiPlatform.Domain.Interfaces
         T GetAppSettingValue<T>(string Key);
         void SaveAppSettingValue(string Key, object value);
         string AppVersion();
-        bool IsConnectedToInternet();
+     
     }
 }

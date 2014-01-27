@@ -47,28 +47,6 @@ namespace MultiPlatform.W8x.Shared.UI.Services
             return string.Format("{0}.{1}", version.Major, version.Minor);
         }
 
-        public bool IsConnectedToInternet()
-        {
-            NetworkInformation.NetworkStatusChanged += NetworkInformation_NetworkStatusChanged;
-
-            bool connected = false;
-
-            ConnectionProfile cp = NetworkInformation.GetInternetConnectionProfile();
-
-            if (cp != null)
-            {
-                NetworkConnectivityLevel cl = cp.GetNetworkConnectivityLevel();
-
-                connected = cl == NetworkConnectivityLevel.InternetAccess;
-            }
-
-            return connected;
-        }
-        void NetworkInformation_NetworkStatusChanged(object sender)
-        {
-
-
-
-        }
+       
     }
 }

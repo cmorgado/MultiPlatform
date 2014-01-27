@@ -39,7 +39,7 @@ namespace MultiPlatform.W8x.Shared.UI.ViewModels
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ILocation, MultiPlatform.W81.UI.Services.LocationService>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.ISettings, MultiPlatform.W8x.Shared.UI.Services.UiSettings>();
             SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.IPeerConnector, MultiPlatform.Shared.Services.SimplePeerConnector>();
-           
+            SimpleIoc.Default.Register<MultiPlatform.Domain.Interfaces.INetwork, MultiPlatform.Shared.Services.UiNetwork>();
 
             SimpleIoc.Default.Register<Domain.ViewModels.Home>();
             SimpleIoc.Default.Register<Domain.ViewModels.Details>();

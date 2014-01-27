@@ -49,6 +49,7 @@
     <Compile Include="Code\Utils.cs" />
     <Compile Include="Interfaces\ILocation.cs" />
     <Compile Include="Interfaces\INavigation.cs" />
+    <Compile Include="Interfaces\INetwork.cs" />
     <Compile Include="Interfaces\IPeerConnector.cs" />
     <Compile Include="Interfaces\ISettings.cs" />
     <Compile Include="Interfaces\ISQLite.cs" />

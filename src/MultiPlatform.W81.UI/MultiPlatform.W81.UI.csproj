@@ -104,6 +104,9 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\MultiPlatform.W8.UI\Services\UiNetwork.cs">
+      <Link>Services\UiNetwork.cs</Link>
+    </Compile>
     <Compile Include="..\MultiPlatform.W8.UI\Services\UiSettings.cs">
       <Link>Services\UiSettings.cs</Link>
     </Compile>

@@ -92,6 +92,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\MultiPlatform.W8.UI\Services\UiNetwork.cs">
+      <Link>Services\UiNetwork.cs</Link>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>

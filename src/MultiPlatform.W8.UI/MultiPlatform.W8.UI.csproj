@@ -130,6 +130,7 @@
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\UiNavigation.cs" />
+    <Compile Include="Services\UiNetwork.cs" />
     <Compile Include="Services\UiSettings.cs" />
     <Compile Include="Shared\Converters.cs" />
     <Compile Include="SQLite.cs" />

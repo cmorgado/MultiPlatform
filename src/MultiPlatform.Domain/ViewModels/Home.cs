@@ -19,6 +19,7 @@ namespace MultiPlatform.Domain.ViewModels
             , IUx uxService
             , ILocation locationService
             , IPeerConnector peerConnectorService
+            , INetwork networkService
             )
             : base(
             navigationService
@@ -26,7 +27,8 @@ namespace MultiPlatform.Domain.ViewModels
             , settingsService
             , uxService
             , locationService
-                , peerConnectorService
+            , peerConnectorService
+            , networkService
             )
         {
 
